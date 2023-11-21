@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstApp", "FirstApp\FirstA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypesAndOperations", "TypesAndOperations\TypesAndOperations.csproj", "{4777510B-CCC1-4E2C-B6D8-D132808B01AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringApp", "StringApp\StringApp.csproj", "{91EA63F3-1828-4BF0-945E-18B2FB025CE8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{4777510B-CCC1-4E2C-B6D8-D132808B01AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4777510B-CCC1-4E2C-B6D8-D132808B01AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4777510B-CCC1-4E2C-B6D8-D132808B01AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91EA63F3-1828-4BF0-945E-18B2FB025CE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91EA63F3-1828-4BF0-945E-18B2FB025CE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91EA63F3-1828-4BF0-945E-18B2FB025CE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91EA63F3-1828-4BF0-945E-18B2FB025CE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
