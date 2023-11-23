@@ -308,7 +308,10 @@ namespace StringApp // Note: actual namespace depends on the project name.
             string formattedString3 = string.Format("Decimal: {0:D}, Hexadecimal: {0:X}, Scientific: {1:E}", 42, Math.PI);
             Console.WriteLine(formattedString3);                                            // Вывод: Decimal: 42, Hexadecimal: 2A, Scientific: 3.141593E+00
             
-            
+            // Настраиваемые форматы
+            long number = 19876543210;
+            string result = string.Format("{0:+# (###) ###-##-##}", number);
+            Console.WriteLine(result);                                                      // +1 (987) 654-32-10
             
             
             // -=================== String Builder ===================
