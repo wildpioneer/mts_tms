@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypesAndOperations", "Types
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringApp", "StringApp\StringApp.csproj", "{91EA63F3-1828-4BF0-945E-18B2FB025CE8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classes", "Classes\Classes.csproj", "{E422D494-8F31-438B-BA83-CDDCDD777A34}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{91EA63F3-1828-4BF0-945E-18B2FB025CE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91EA63F3-1828-4BF0-945E-18B2FB025CE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91EA63F3-1828-4BF0-945E-18B2FB025CE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E422D494-8F31-438B-BA83-CDDCDD777A34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E422D494-8F31-438B-BA83-CDDCDD777A34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E422D494-8F31-438B-BA83-CDDCDD777A34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E422D494-8F31-438B-BA83-CDDCDD777A34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
