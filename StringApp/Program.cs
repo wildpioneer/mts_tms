@@ -130,6 +130,8 @@ namespace StringApp // Note: actual namespace depends on the project name.
             Console.WriteLine($"IndexOf 'i': {f_str.IndexOf('i')}");
             Console.WriteLine($"LastIndexOf 'i': {f_str.LastIndexOf("i")}");
             
+            // Решить задачу по поиску всех символов - в строке
+            
             // -=================== StartWith
             var files = new string[]
             {
@@ -189,11 +191,11 @@ namespace StringApp // Note: actual namespace depends on the project name.
             
             // -=================== TrimStart
             string trimmedStartString = originalString.TrimStart();
-            Console.WriteLine($"TrimStart: {trimmedStartString}");     // Вывод: "Hello, world!   "
+            Console.WriteLine($"TrimStart: '{trimmedStartString}'");     // Вывод: "Hello, world!   "
             
             // -=================== TrimEnd
             string trimmedEndString = originalString.TrimEnd();
-            Console.WriteLine($"TrimEnd: {trimmedEndString}");          // Вывод: "   Hello, world!"
+            Console.WriteLine($"TrimEnd: '{trimmedEndString}'");          // Вывод: "   Hello, world!"
 
             // -=================== Substring
             string originalSubstringString = "Hello, world!";
