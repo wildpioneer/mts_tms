@@ -1,5 +1,6 @@
 ﻿using System.Security.Cryptography.X509Certificates;
 using Classes.Models;
+using Classes.Practice;
 
 namespace Classes
 {
@@ -203,6 +204,45 @@ namespace Classes
             
             // -=================== This
             PersonThis personThis = new PersonThis("Alex", 45);
+            
+            
+            // -=================== Практика ===================-
+            // -=================== Задача 1
+            Student[] students = new Student[14];
+
+            for (int i = 0; i < 14; i++)
+            {
+                students[i] = new Student();
+                students[i].name = "Alex" + i;
+                students[i].group = new Random().Next(2);
+                students[i].diplomMark = new Random().Next(1, 11);
+            }
+            
+            Console.WriteLine($"Students.Length: {students.Length}");
+            foreach (var student in students)
+            {
+                Console.Write($"Name: {student.name}, Group: {student.group}, Mark: {student.diplomMark}");
+                Console.WriteLine();
+            }
+            
+            // -=================== Задача 2
+            foreach (var student in students) student.Print();
+
+            // -=================== Задача 3
+            Student[] students1 = new Student[14];
+            
+            for (int i = 0; i < 14; i++) students1[i] = new Student("Alex" + i);
+            foreach (var student in students1) student.Print();
+            
+            // -=================== Задача 4
+            Cat cat = new Cat();
+            cat.name = "Barsik";
+            cat.age = 2;
+            cat.maxFoodCount = 3;
+            
+            Console.WriteLine($"Наелся? - {cat.Feed(2)}");
+            Console.WriteLine($"Наелся? - {cat.Feed(4)}");
+            Console.WriteLine("Наелся? - {0}", cat.Feed(3) ? "Да" : "Нет");
         }
     }
 }
