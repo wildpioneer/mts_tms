@@ -11,6 +11,7 @@ public class Person
     // Блок методов и свойств
     public void Print()
     {
+        int i;
         Console.WriteLine($"Имя: {name}  Возраст: {age}");
     }
 }

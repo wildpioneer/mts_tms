@@ -1,6 +1,6 @@
-﻿using System.Security.Cryptography.X509Certificates;
-using Classes.Models;
+﻿using Classes.Models;
 using Classes.Practice;
+using Flora;
 
 namespace Classes
 {
@@ -243,6 +243,15 @@ namespace Classes
             Console.WriteLine($"Наелся? - {cat.Feed(2)}");
             Console.WriteLine($"Наелся? - {cat.Feed(4)}");
             Console.WriteLine("Наелся? - {0}", cat.Feed(3) ? "Да" : "Нет");
+            
+            // -=================== Пространства имен ===================-
+            // Удалить Using - Показать ошибку
+            // -=================== Подключение пространства имен
+            Tree tree = new Tree();
+            tree.type = "Test";
+            
+            // -=================== Вложенные пространства имен
+            Auto.Tayota.Engine engine = new Auto.Tayota.Engine();
         }
     }
 }
