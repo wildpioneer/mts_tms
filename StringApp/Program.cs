@@ -375,7 +375,7 @@ namespace StringApp // Note: actual namespace depends on the project name.
         
             Console.WriteLine($"Remove : {sbRemove}");                      // Вывод: Hello!
 
-            // -=================== Remove
+            // -=================== Insert
             StringBuilder sbInsert = new StringBuilder("Hello!");
             sbInsert.Insert(5, " world");
         
