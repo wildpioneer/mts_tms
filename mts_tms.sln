@@ -2,7 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstApp", "FirstApp\FirstApp.csproj", "{0B7633EE-8C0E-4994-9CFB-56A6D2F7C826}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypesAndOperations", "TypesAndOperations\TypesAndOperations.csproj", "{4777510B-CCC1-4E2C-B6D8-D132808B01AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arrays", "Arrays\Arrays.csproj", "{4777510B-CCC1-4E2C-B6D8-D132808B01AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArraysHomeWork", "ArraysHomeWork\ArraysHomeWork.csproj", "{E23FE233-0942-481A-B87F-9BC0E7C7C358}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +20,9 @@ Global
 		{4777510B-CCC1-4E2C-B6D8-D132808B01AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4777510B-CCC1-4E2C-B6D8-D132808B01AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4777510B-CCC1-4E2C-B6D8-D132808B01AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E23FE233-0942-481A-B87F-9BC0E7C7C358}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E23FE233-0942-481A-B87F-9BC0E7C7C358}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E23FE233-0942-481A-B87F-9BC0E7C7C358}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E23FE233-0942-481A-B87F-9BC0E7C7C358}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
