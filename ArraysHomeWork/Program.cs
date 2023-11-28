@@ -22,9 +22,12 @@ static class Program
 
         Task6 task6 = new Task6();
         task6.Execute();
+        
+        Task7 task7 = new Task7();
+        task7.Execute();   
         */
 
-        Task7 task7 = new Task7();
-        task7.Execute();
+        Task8 task8 = new Task8();
+        task8.Execute();
     }
 }
