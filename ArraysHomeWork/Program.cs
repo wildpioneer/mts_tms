@@ -34,9 +34,12 @@ static class Program
         
         Task10 task10 = new Task10();
         task10.Execute();
-        */
-        
+
         Task11 task11 = new Task11();
         task11.Execute();
+        */
+        
+        Task12 task12 = new Task12();
+        task12.Execute();
     }
 }
