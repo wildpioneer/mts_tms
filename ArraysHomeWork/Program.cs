@@ -25,9 +25,18 @@ static class Program
         
         Task7 task7 = new Task7();
         task7.Execute();   
-        */
 
         Task8 task8 = new Task8();
         task8.Execute();
+        
+        Task9 task9 = new Task9();
+        task9.Execute();
+        
+        Task10 task10 = new Task10();
+        task10.Execute();
+        */
+        
+        Task11 task11 = new Task11();
+        task11.Execute();
     }
 }
