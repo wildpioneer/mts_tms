@@ -1,3 +1,4 @@
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace StringsHomeWork;
@@ -13,7 +14,7 @@ public class Task5
      * 3 Вывести на экран только одни буквы из номера документа в формате yyy/yyy/y/y в нижнем регистре.
      * 4 Вывести на экран буквы из номера документа в формате "Letters:yyy/yyy/y/y" в верхнем регистре
      * (реализовать с помощью класса StringBuilder).
-     * 5 Проверить содержит ли номер документа последовательность abc и вывети сообщение содержит или нет
+     * 5 Проверить содержит ли номер документа последовательность abc и вывести сообщение содержит или нет
      * (причем, abc и ABC считается одинаковой последовательностью).
      * 6 Проверить начинается ли номер документа с последовательности 555.
      * 7 Проверить заканчивается ли номер документа на последовательность 1a2b.
@@ -24,7 +25,7 @@ public class Task5
     // Простое решение 
     public void Execute()
     {
-        string initialText = "1234-AbC-5678-dCX-9r0g";
+        string initialText = "5554-AbC-5678-dCX-9r0g";
         Console.WriteLine($"Исходная строка: {initialText}");
 
         // 1
@@ -49,7 +50,41 @@ public class Task5
             result += match.Value;
         }
         
-        result = string.Format("{0:###/###/#/#}", result.ToLower());
-        Console.WriteLine($"одни буквы из номера документа в формате yyy/yyy/y/y в нижнем регистре: {result}");
+        result = string.Format("{0}/{1}/{2}/{3}", 
+            result.Substring(0, 3),
+            result.Substring(3, 3),
+            result.Substring(6, 1),
+            result.Substring(7, 1))
+            .ToLower();
+
+        Console.WriteLine($"Одни буквы из номера документа в формате yyy/yyy/y/y в нижнем регистре: {result}");
+        
+        // 4
+        pattern = @"[a-zA-Z]";
+        StringBuilder results = new StringBuilder();
+
+        matches = Regex.Matches(initialText, pattern);
+
+        foreach (Match match in matches)
+            results.Append(match.Value.ToUpper());
+
+        results.Insert(3, "/").Insert(7, "/").Insert(9, "/").Insert(0, "Letters:");
+
+        Console.WriteLine($"Одни буквы из номера документа в формате 'Letters:yyy/yyy/y/y' в верхнем регистре: {results}");
+        
+        // 5
+        Console.WriteLine(initialText.Contains("abc", StringComparison.OrdinalIgnoreCase)
+            ? "Строка содержит последовательность abc без учета регистра."
+            : "Строка не содержит последовательность abc без учета регистра.");
+
+        // 6
+        Console.WriteLine(initialText.StartsWith("555")
+            ? "Строка начинается с последовательности '555'."
+            : "Строка не начинается с последовательности '555'.");
+        
+        // 7
+        Console.WriteLine(initialText.EndsWith("1a2b")
+            ? "Строка заканчивается последовательностью '1a2b'."
+            : "Строка не заканчивается последовательностью '1a2b'.");
     }
 }
