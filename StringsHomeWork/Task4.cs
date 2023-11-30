@@ -1,3 +1,5 @@
+using System;
+
 namespace StringsHomeWork;
 
 public class Task4
