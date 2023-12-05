@@ -1,8 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using AbstractClasses;
 using AbstractClasses.Game;
 
-Console.WriteLine("Hello, World!");
+// AbstractClassTemplate abstractClassTemplate = new AbstractClassTemplate(); - Ошибка 
+
+// Game Implementation
 
 Character[] characters = new Character[3];
 
