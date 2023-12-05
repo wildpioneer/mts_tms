@@ -3,6 +3,7 @@
 using Interfaces;
 using Interfaces.BaseImpl;
 using Interfaces.ExplicitImpl;
+using Interfaces.FinalExample;
 
 // IDisplayable displayable = new IDisplayable(); - Ошибка 
 
@@ -94,3 +95,12 @@ tablet51.DisplayInformation("Hello from tablet51!");
 
 IDisplayable tablet52 = new Tablet5();
 tablet52.DisplayInformation("Hello from tablet52!");
+
+
+// -======================== Задача ========================-
+ApplicationTester applicationTester = new ApplicationTester();
+applicationTester.AddTest(new IntegrationTest());
+applicationTester.AddTest(new UnitTest());
+applicationTester.AddTest(new UITest());
+
+applicationTester.RunTests();
