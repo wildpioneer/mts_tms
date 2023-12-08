@@ -1,5 +1,6 @@
 ﻿using Collections.IDictionary;
 using Collections.IList;
+using Collections.ISet;
 
 // -==================== IList ====================-
 // -==================== ArrayList
@@ -20,6 +21,9 @@ new SortedDictionaryExample().Run();
 
 // -==================== SortedList<TKey, TValue>
 new SortedListExample().Run();
+
+// -==================== HashSet<TKey, TValue>
+new HashSetExample().Run();
 
 // -==================== Stack<T>
 new StackExample().Run();
