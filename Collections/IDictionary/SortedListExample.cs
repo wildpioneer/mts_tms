@@ -1,3 +1,5 @@
+using Collections.Helper;
+
 namespace Collections.IDictionary;
 
 public class SortedListExample
@@ -14,12 +16,8 @@ public class SortedListExample
 
         // Выводим элементы отсортированного списка
         Console.WriteLine("SortedList elements:");
-
-        foreach (var pair in mySortedList)
-        {
-            Console.WriteLine($"Key: {pair.Key}, Value: {pair.Value}");
-        }
-
+        PrintHelper.PrintCollection(mySortedList);
+        
         // Проверяем наличие ключа в отсортированном списке
         bool containsKey = mySortedList.ContainsKey("Banana");
         Console.WriteLine($"ContainsKey(\"Banana\"): {containsKey}");
@@ -36,10 +34,6 @@ public class SortedListExample
 
         // Выводим элементы после удаления
         Console.WriteLine("SortedList elements after removal:");
-
-        foreach (var pair in mySortedList)
-        {
-            Console.WriteLine($"Key: {pair.Key}, Value: {pair.Value}");
-        }
+        PrintHelper.PrintCollection(mySortedList);
     }
 }

@@ -3,26 +3,26 @@ using Collections.IList;
 
 // -==================== IList ====================-
 // -==================== ArrayList
-// new ArrayListExample().Run();
+new ArrayListExample().Run();
 
 // -==================== List<T>
-// new ListExample().Run();
+new ListExample().Run();
 
 // -==================== LinkedList<T>
-// new LinkedListExample().Run();
+new LinkedListExample().Run();
 
 // -==================== IDictionary ====================-
 // -==================== Dictionary<TKey, TValue>
-// new DictionaryExample().Run();
+new DictionaryExample().Run();
 
 // -==================== SortedDictionary<TKey, TValue>
-// new SortedDictionaryExample().Run();
+new SortedDictionaryExample().Run();
 
 // -==================== SortedList<TKey, TValue>
-// new SortedListExample().Run();
+new SortedListExample().Run();
 
 // -==================== Stack<T>
-// new StackExample().Run();
+new StackExample().Run();
 
 // -==================== Queue<T>
 new QueueExample().Run();

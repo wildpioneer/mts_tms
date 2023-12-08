@@ -19,7 +19,7 @@ public class ListExample
 
         // Вывод всех элементов
         Console.WriteLine("Элементы в списке:");
-        PrintHelper.PrintList(stringList);
+        PrintHelper.PrintCollection(stringList);
 
         // Получение элемента по индексу
         string elementAtIndex = stringList[2];
@@ -32,7 +32,7 @@ public class ListExample
         // Сортировка элементов
         stringList.Sort();
         Console.WriteLine("Отсортированная коллекция:");
-        PrintHelper.PrintList(stringList);
+        PrintHelper.PrintCollection(stringList);
 
         // Бинарный поиск элемента
         // Перед использованием нужно отсортировать коллекцию
@@ -51,16 +51,16 @@ public class ListExample
 
         // Вывод после удаления
         Console.WriteLine("Элементы после удаления:");
-        PrintHelper.PrintList(stringList);
+        PrintHelper.PrintCollection(stringList);
 
         // Reverse элементов
         stringList.Reverse();
         Console.WriteLine("Перевернутая коллекция:");
-        PrintHelper.PrintList(stringList);
+        PrintHelper.PrintCollection(stringList);
 
         // Очистка
         stringList.Clear();
         Console.WriteLine($"Количество элементов после очистки: {stringList.Count}");
-        PrintHelper.PrintList(stringList);
+        PrintHelper.PrintCollection(stringList);
     }
 }

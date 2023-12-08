@@ -40,6 +40,6 @@ public class ArrayListExample
 
         // Выводим элементы после добавления разных типов данных
         Console.WriteLine("\nЭлементы в ArrayList после добавления числа и булевого значения:");
-        PrintHelper.PrintList(stringList);
+        PrintHelper.PrintCollection(stringList);
     }
 }

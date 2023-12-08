@@ -26,30 +26,20 @@ public class DictionaryExample
         }
 
         // Итерация по парам ключ-значение
-        PrintHelper.PrintList(myDictionary);
-        foreach (var pair in myDictionary)
-        {
-            Console.WriteLine($"Key: {pair.Key}, Value: {pair.Value}");
-        }
+        PrintHelper.PrintCollection(myDictionary);
 
         // Удаление элемента по ключу
         myDictionary.Remove("cherry");
 
         // Выводим элементы после удаления
         Console.WriteLine("Elements after removal:");
-        foreach (var pair in myDictionary)
-        {
-            Console.WriteLine($"Key: {pair.Key}, Value: {pair.Value}");
-        }
+        PrintHelper.PrintCollection(myDictionary);
 
         // Очистка словаря
         myDictionary.Clear();
 
         // Выводим элементы после очистки
         Console.WriteLine("Elements after clearing:");
-        foreach (var pair in myDictionary)
-        {
-            Console.WriteLine($"Key: {pair.Key}, Value: {pair.Value}");
-        }
+        PrintHelper.PrintCollection(myDictionary);
     }
 }

@@ -1,3 +1,5 @@
+using Collections.Helper;
+
 namespace Collections.IList;
 
 public class QueueExample
@@ -14,11 +16,7 @@ public class QueueExample
 
         // Выводим элементы очереди
         Console.WriteLine("Queue elements:");
-        
-        foreach (var item in myQueue)
-        {
-            Console.WriteLine(item);
-        }
+        PrintHelper.PrintCollection(myQueue);
 
         // Получаем и удаляем элемент из начала очереди
         string dequeuedElement = myQueue.Dequeue();
@@ -26,11 +24,7 @@ public class QueueExample
 
         // Выводим элементы после извлечения
         Console.WriteLine("Queue elements after dequeue:");
-
-        foreach (var item in myQueue)
-        {
-            Console.WriteLine(item);
-        }
+        PrintHelper.PrintCollection(myQueue);
 
         // Проверяем элемент в начале очереди без удаления
         string peekedElement = myQueue.Peek();
@@ -38,10 +32,6 @@ public class QueueExample
 
         // Выводим элементы после просмотра
         Console.WriteLine("Queue elements after peek:");
-
-        foreach (var item in myQueue)
-        {
-            Console.WriteLine(item);
-        }
+        PrintHelper.PrintCollection(myQueue);
     }
 }

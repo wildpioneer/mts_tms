@@ -1,3 +1,5 @@
+using Collections.Helper;
+
 namespace Collections.IDictionary;
 
 public class StackExample
@@ -14,11 +16,7 @@ public class StackExample
 
         // Выводим элементы стека
         Console.WriteLine("Stack elements:");
-
-        foreach (var item in myStack)
-        {
-            Console.WriteLine(item);
-        }
+        PrintHelper.PrintCollection(myStack);
 
         // Получаем верхний элемент без удаления
         string topElement = myStack.Peek();
@@ -30,10 +28,6 @@ public class StackExample
 
         // Выводим элементы после удаления
         Console.WriteLine("Stack elements after Pop:");
-
-        foreach (var item in myStack)
-        {
-            Console.WriteLine(item);
-        }
+        PrintHelper.PrintCollection(myStack);
     }
 }

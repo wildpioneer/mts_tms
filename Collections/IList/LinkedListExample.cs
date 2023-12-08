@@ -1,3 +1,5 @@
+using Collections.Helper;
+
 namespace Collections.IList;
 
 public class LinkedListExample
@@ -17,7 +19,7 @@ public class LinkedListExample
 
         // Выводим элементы списка
         Console.WriteLine("Элементы в списке:");
-        PrintList(linkedList);
+        PrintHelper.PrintCollection(linkedList);
 
         // Используем First и Last для получения первого и последнего элемента
         Console.WriteLine($"Первый элемент: {linkedList.First.Value}");
@@ -36,22 +38,13 @@ public class LinkedListExample
 
         // Выводим элементы после удаления
         Console.WriteLine("Элементы после удаления:");
-        PrintList(linkedList);
+        PrintHelper.PrintCollection(linkedList);
 
         // Используем Clear для очистки списка
         linkedList.Clear();
 
         // Выводим элементы после очистки
         Console.WriteLine("Элементы после очистки:");
-        PrintList(linkedList);
-    }
-
-    static void PrintList(LinkedList<string> list)
-    {
-        foreach (var item in list)
-        {
-            Console.Write(item + " ");
-        }
-        Console.WriteLine();
+        PrintHelper.PrintCollection(linkedList);
     }
 }
