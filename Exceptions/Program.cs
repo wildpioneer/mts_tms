@@ -51,6 +51,7 @@ else
 }
 */
 
+// -====================== Пробрасывание исключения ======================-
 ThrowExceptions throwExceptions = new ThrowExceptions();
 //throwExceptions.CheckUsername();
 //throwExceptions.CheckUsername1();
