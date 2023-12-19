@@ -2,20 +2,24 @@ namespace Collections;
 
 public class Person
 {
-    public string Name { get; set; }
-    public int Age { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+
+    protected bool Equals(Person other)
+    {
+        return FirstName == other.FirstName && LastName == other.LastName;
+    }
+
+    public override bool Equals(object? obj)
+    {
+        if (ReferenceEquals(null, obj)) return false;
+        if (ReferenceEquals(this, obj)) return true;
+        if (obj.GetType() != this.GetType()) return false;
+        return Equals((Person)obj);
+    }
 
     public override int GetHashCode()
     {
-        return HashCode.Combine(Name, Age);
-    }
-
-    public override bool Equals(object obj)
-    {
-        if (obj == null || GetType() != obj.GetType())
-            return false;
-
-        Person otherPerson = (Person)obj;
-        return Name == otherPerson.Name && Age == otherPerson.Age;
+        return HashCode.Combine(FirstName, LastName);
     }
 }
