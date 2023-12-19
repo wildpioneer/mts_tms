@@ -6,4 +6,5 @@ public class Messenger<T> where T : Message
     {
         Console.WriteLine($"Отправляется сообщение: {message.Text}");
     }
+    
 }

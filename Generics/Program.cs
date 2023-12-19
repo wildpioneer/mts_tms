@@ -58,9 +58,9 @@ Helper.SendMessage(new EmailMessage("Bye World"));
 Helper.SendMessage<EmailMessage>(new EmailMessage("Bye World"));
 
 // -=================== Ограничения обобщений в типах
-Messenger<Message> telegram = new Messenger<Message>(); 
+Messenger<Message> telegram = new Messenger<Message>();
 telegram.SendMessage(new Message("Hello World"));
- 
+
 Messenger<EmailMessage> outlook = new Messenger<EmailMessage>();
 outlook.SendMessage(new EmailMessage("Bye World"));
 
@@ -74,3 +74,19 @@ MessengerClass<SmsMessage> smsMessengerClass = new MessengerClass<SmsMessage>();
 // MessengerClass<string> // string = class  
 smsMessengerClass.SendMessage(new SmsMessage("SMS is not actual anymore..."));
 
+// MessengerNew<SmsMessage> nMessengerNew = new MessengerNew<SmsMessage>(); // Ошибка потому что у SmsMessage нет конструктора без параметров 
+MessengerNew<EmailMessage> nMessengerNew = new MessengerNew<EmailMessage>(); // Все ок
+
+// -=================== Ограничения нескольких универсальных параметров
+SimplePerson sender = new SimplePerson(1, "Ted");
+SimplePerson receiver = new SimplePerson(3, "Fred");
+MessengerService<EmailMessage, SimplePerson> messengerService = new MessengerService<EmailMessage, SimplePerson>();
+messengerService.SendMessage(sender, receiver, new EmailMessage("Email..."));
+
+// -=================== Наследование обобщенных типов
+ChildGenericPerson<Guid> childGenericPerson = new ChildGenericPerson<Guid>(Guid.NewGuid(), "Toma");
+IntGenericPerson intGenericPerson = new IntGenericPerson(1, "Vera");
+VaryGenericPerson<string> varyGenericPerson = new VaryGenericPerson<string>(2, "Gena");
+ChildWherePerson<string> childWherePerson = new ChildWherePerson<string>("1/2", "Dolly");
+ChildWherePerson<SimplePerson> childWherePerson1 =
+    new ChildWherePerson<SimplePerson>(new(3, "Sam"), "Dolly");

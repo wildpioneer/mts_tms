@@ -8,4 +8,9 @@ public class Message
     {
         Text = text;
     }
+
+    public override string ToString()
+    {
+        return $"{nameof(Text)}: {Text}";
+    }
 }

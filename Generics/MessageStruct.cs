@@ -8,4 +8,9 @@ public struct MessageStruct
     {
         Text = text;
     }
+
+    public override string ToString()
+    {
+        return $"{nameof(Text)}: {Text}";
+    }
 }
