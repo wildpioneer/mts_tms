@@ -1,11 +1,13 @@
 namespace Generics;
 
-public class GenericPerson<T>
+public class StaticPerson<T>
 {
+    public static T? code;
+
     public T Id { get; set; }
     public string Name { get; }
 
-    public GenericPerson(T id, string name)
+    public StaticPerson(T id, string name)
     {
         Id = id;
         Name = name;
