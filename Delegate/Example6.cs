@@ -1,8 +1,8 @@
 namespace Delegate;
 
-public class Program6
+public class Example6
 {
-    static void Main6()
+    public void Run()
     {
         CurrencyExchangeMonitor currencyExchangeMonitor = new CurrencyExchangeMonitor();
         currencyExchangeMonitor.PriceChangeHandler = ShowPrice;
@@ -14,7 +14,7 @@ public class Program6
     }
     
     // Сигнатура должна соответствовать делегату public delegate void PriceChange(int currentPrice);
-    public static void ShowPrice(int price)
+    public void ShowPrice(int price)
     {
         Console.WriteLine($"Текущая цена: {price}");
     }

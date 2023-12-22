@@ -1,11 +1,11 @@
 namespace Delegate;
 
-public class Program7
+public class Example7
 {
     delegate void Message();
     delegate int Operation(int x, int y);
     
-    static void Main7()
+    public void Run()
     {
         Message? msg = null;
         //msg(); // ! Ошибка: делегат равен null
@@ -19,6 +19,6 @@ public class Program7
         int? result3 = op?.Invoke(2, 3);
     }
     
-    private static void ShowMessage() => Console.WriteLine("Have fun!"); 
-    private static int Add(int x, int y) => x + y;
+    private void ShowMessage() => Console.WriteLine("Have fun!"); 
+    private int Add(int x, int y) => x + y;
 }

@@ -2,11 +2,11 @@
 
 namespace Delegate;
 
-class Program1
+class Example2
 {
     public delegate string WithParameters(string name1, string name2);
     
-    static void Main2()
+    public void Run()
     {
         WithParameters withParameters1 = new (ShowMessage);
         WithParameters withParameters2 = ShowMessage;
@@ -18,7 +18,7 @@ class Program1
         Console.WriteLine(result2);
     }
 
-    private static string ShowMessage(string value1, string value2)
+    private string ShowMessage(string value1, string value2)
     {
         Console.WriteLine($"{value1}, {value2} Have fun!!!");
 

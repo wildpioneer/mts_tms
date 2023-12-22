@@ -1,11 +1,11 @@
 namespace Delegate;
 
-public class Program4
+public class Example4
 {
     // Тип делегата
     public delegate void NoParameters();
 
-    static void Main4()
+    public void Run()
     {
         NoParameters noPrm = delegate
         {

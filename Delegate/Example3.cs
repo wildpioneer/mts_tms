@@ -1,11 +1,11 @@
 namespace Delegate;
 
-public class Program3
+public class Example3
 {
     // Тип делегата
     public delegate void NoParameters();
 
-    static void Main3()
+    public void Run()
     {
         NoParameters noPrm = ShowMessage1;
 
@@ -14,7 +14,7 @@ public class Program3
         noPrm.Invoke(); // Более унифицированный вызов методов делегата
     }
 
-    private static void ShowMessage1() => Console.WriteLine("Have fun!");
+    private void ShowMessage1() => Console.WriteLine("Have fun!");
 
-    private static void ShowMessage2() => Console.WriteLine("See you!");
+    private void ShowMessage2() => Console.WriteLine("See you!");
 }
