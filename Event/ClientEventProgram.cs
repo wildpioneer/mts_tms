@@ -11,13 +11,12 @@ class ClientEventProgram
 
     public void NotifyClients(IEnumerable<Client> clients)
     {
-        // какой-то код бизнес логики - подготовки например сообщения
-        Notified += new NotificationByEmail().EmailNotification;
-
         foreach (Client client in clients)
         {
+            // какой-то код бизнес логики - подготовки например сообщения
+            
             // Оповещение
-            Notified(client.Email);
+            Notified(client.Email + "   Congratulation!!!");
         }
     }
     
@@ -35,6 +34,8 @@ class ClientEventProgram
         
         clients[0] = client;
         clients[1] = client1;
+        
+        Notified += new NotificationByEmail().EmailNotification;
         
         NotifyClients(clients);
     }
