@@ -12,7 +12,7 @@ using Delegate;
 // new Example4().Run();
 
 // -================= Delegate как параметр
-new Example5().Run();
+//new Example5().Run();
 
 // -================= Живой пример
 // new Example6().Run();

@@ -8,11 +8,17 @@ class Program
     public static event Handler Stuck;
     //public static Handler Stuck;
 
-    static void Main1()
+    static void Main()
     {
         Stuck += ShowMessage;
 
         Stuck("Alex", "Trostyanko");
+
+        ClientEventProgram clientEventProgram = new ClientEventProgram();
+        clientEventProgram.Run();
+
+        ClientDelegateProgram clientDelegateProgram = new ClientDelegateProgram();
+        clientDelegateProgram.Run();
     }
     
     private static void ShowMessage(string firstname, string lastname) => Console.WriteLine($"{firstname} {lastname} Have fun!");
