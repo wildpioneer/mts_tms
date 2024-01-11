@@ -2,6 +2,8 @@ namespace Delegate;
 
 public class ActionExamples
 {
+    // Делегат Action представляет некоторое действие, которое ничего не возвращает
+    
     public void SimpleAction()
     {
         // Action без параметров и без возвращаемого значения

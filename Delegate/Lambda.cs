@@ -7,9 +7,25 @@ public class Lambda
     delegate void Operation(int x, int y);
 
     delegate int Operation1(int x, int y);
-    
-    delegate bool IsEqual(int x);
 
+    delegate bool IsEqual(int x);
+    
+    delegate void PrintHandler(string message);
+
+    public void Example0()
+    {
+
+        string Word()
+        {
+            return "word";
+        }
+
+        string WordLamda() => "word";
+        
+        Console.WriteLine(Word());
+        Console.WriteLine(WordLamda());
+    }
+    
     public void Example1()
     {
         Message hello = () => Console.WriteLine("Hello");
@@ -17,22 +33,37 @@ public class Lambda
         hello();
         hello();
     }
-    
+
     public void Example2()
     {
         // Параметры лямбды
         Operation sum = (x, y) => Console.WriteLine($"{x} + {y} = {x + y}");
         sum(1, 2);
         sum(22, 14);
+        
+        // Скобки в единичном параметре не нужны
+        PrintHandler print = message => Console.WriteLine(message); 
+        print("Hello");         // Hello
+        print("Welcome");       // Welcome
+        
+        // с С№ 12 - значения по умолчанию
+        var welcome = (string message = "hello")=> Console.WriteLine(message); 
+ 
+        welcome("hello world"); // hello world
+        welcome();              // hello
+
     }
 
     public void Example3()
     {
         // Возвращение результата
         // 1
-        var sum1 = (int x, int y) => x + y;
-        int sumResult = sum1(4, 5);
-        Console.WriteLine(sumResult);
+        // var sum = (x, y) => Console.WriteLine($"{x} + {y} = {x + y}");   // ! Ошибка, компилятор не понимает какой тип буде у параметров
+        var sum = (int x, int y) => x + y;
+        int sumResult1 = sum(4, 5);
+        int sumResult2 = sum(24, 25);
+        Console.WriteLine(sumResult1);
+        Console.WriteLine(sumResult2);
 
         // 2
         Operation1 multiply = (x, y) => x * y;
@@ -43,8 +74,9 @@ public class Lambda
         var subtract = (int x, int y) =>
         {
             if (x > y) return x - y;
-            else return y - x;
+            return y - x;
         };
+        
         int result1 = subtract(10, 6);
         Console.WriteLine(result1);
 
@@ -60,12 +92,12 @@ public class Lambda
         var message = () => Console.Write("Hello ");
         message += () => Console.WriteLine("World"); // добавляем анонимное лямбда-выражение
         message += hello1; // добавляем лямбда-выражение из переменной hello
-        message += Print; // добавляем метод
+        message += Print;  // добавляем метод
 
         message();
         Console.WriteLine("--------------"); // для разделения вывода
 
-        message -= Print; // удаляем метод
+        message -= Print;  // удаляем метод
         message -= hello1; // удаляем лямбда-выражение из переменной hello
 
         message?.Invoke(); // на случай, если в message больше нет действий
@@ -104,13 +136,13 @@ public class Lambda
         // Лямбда-выражение как результат метода
         Operation1 operation = SelectOperation(OperationType.Add);
         Console.WriteLine(operation(10, 4));
- 
+
         operation = SelectOperation(OperationType.Subtract);
         Console.WriteLine(operation(10, 4));
- 
+
         operation = SelectOperation(OperationType.Multiply);
         Console.WriteLine(operation(10, 4));
- 
+
         Operation1 SelectOperation(OperationType opType)
         {
             switch (opType)
