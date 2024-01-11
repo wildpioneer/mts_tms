@@ -17,7 +17,6 @@ public class Program
         new BaseSyntax().RunStringExtention();
         */
         
-        
         // Where
         /*
         new Where().RunQuerySyntax();
