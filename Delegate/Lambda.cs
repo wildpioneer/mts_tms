@@ -40,6 +40,7 @@ public class Lambda
         Operation sum = (x, y) => Console.WriteLine($"{x} + {y} = {x + y}");
         sum(1, 2);
         sum(22, 14);
+        // var sum = (x, y) => Console.WriteLine($"{x} + {y} = {x + y}");   // ! Ошибка, компилятор не понимает какой тип буде у параметров
         
         // Скобки в единичном параметре не нужны
         PrintHandler print = message => Console.WriteLine(message); 
@@ -58,7 +59,6 @@ public class Lambda
     {
         // Возвращение результата
         // 1
-        // var sum = (x, y) => Console.WriteLine($"{x} + {y} = {x + y}");   // ! Ошибка, компилятор не понимает какой тип буде у параметров
         var sum = (int x, int y) => x + y;
         int sumResult1 = sum(4, 5);
         int sumResult2 = sum(24, 25);
