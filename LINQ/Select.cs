@@ -8,6 +8,8 @@ public class Select
 
     public void RunQuerySyntax()
     {
+        var r = _testObjectSet.List[2].Equals(_testObjectSet.List[3]);
+        
         // Query Syntax
         Console.WriteLine("Query Syntax");
         
@@ -21,22 +23,14 @@ public class Select
             from number in _testIntSet
             select number.ToString();
 
+        // Формирование нового типа данных
         IEnumerable<bool> queryResult12 =
             from number in _testIntSet
             select (number % 2 == 0);
 
-        foreach (var i in queryResult)
-        {
-            Console.WriteLine($"Int: {i}");
-        }
-        foreach (var i in queryResult11)
-        {
-            Console.WriteLine($"String: {i}");
-        }
-        foreach (var i in queryResult12)
-        {
-            Console.WriteLine($"Bool: {i}");
-        }
+        PrintHelper.Print(queryResult, i => Console.WriteLine($"Int: {i}"));
+        PrintHelper.Print(queryResult11, i => Console.WriteLine($"String: {i}"));
+        PrintHelper.Print(queryResult12, i => Console.WriteLine($"Bool: {i}"));
 
         var queryResult3 =
             from person in _testObjectSet
@@ -74,19 +68,10 @@ public class Select
         IEnumerable<string> methodResult11 = _testIntSet.Select(number => number.ToString());
         IEnumerable<bool> methodResult12 = _testIntSet.Select(number => (number % 2 == 0));
         
-        foreach (var i in methodResult)
-        {
-            Console.WriteLine($"Int: {i}");
-        }
-        foreach (var i in methodResult11)
-        {
-            Console.WriteLine($"String: {i}");
-        }
-        foreach (var i in methodResult12)
-        {
-            Console.WriteLine($"Bool: {i}");
-        }
-
+        PrintHelper.Print(methodResult, i => Console.WriteLine($"Int: {i}"));
+        PrintHelper.Print(methodResult11, i => Console.WriteLine($"String: {i}"));
+        PrintHelper.Print(methodResult12, i => Console.WriteLine($"Bool: {i}"));
+        
         var methodResult2 = _testObjectSet.Select(obj => obj.Name);
 
         foreach (var i in methodResult2)

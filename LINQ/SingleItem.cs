@@ -42,7 +42,7 @@ public class SingleItem
         var queryResult5 = _testIntSet.Single(num => num == 4);
         //var queryResult6 = _testIntSet.Single(num => num == 4 || num == 6); // Exception
         
-        var queryResult6 = _testIntSet.SingleOrDefault(num => num == 4 || num == 6); // Нет Exception
+        // var queryResult6 = _testIntSet.SingleOrDefault(num => num == 4 || num == 6); // Нет Exception
         
         Console.WriteLine($"queryResult: {queryResult5}");
         //Console.WriteLine($"queryResult: {queryResult6}");

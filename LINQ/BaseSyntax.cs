@@ -47,28 +47,21 @@ public class BaseSyntax
         
         IEnumerable<int> methodResult = _testIntSet.Select(number => number);
         //IEnumerable<int> methodResult = testSet.Where(num => num > 5).Select(number => number);
-
+        
         foreach (var i in methodResult)
         {
             Console.WriteLine($"Int: {i}");
         }
-
+        PrintHelper.Print(methodResult, i => Console.WriteLine($"Int: {i}"));
+        
         IEnumerable<string> methodResult1 = _testStringSet.List.Select(text => text);
-
-        foreach (var i in methodResult1)
-        {
-            Console.WriteLine($"String: {i}");
-        }
+        PrintHelper.Print(methodResult1, i => Console.WriteLine($"String: {i}"));
 
         IEnumerable<Person> methodResult2 = _testObjectSet.Select(obj => obj);
-
-        foreach (var i in methodResult2)
-        {
-            Console.WriteLine($"Person: {i.Name} {i.Age}");
-        }
+        PrintHelper.Print(methodResult2, i => Console.WriteLine($"Person: {i.Name} {i.Age}"));
     }
 
-    public void RunStringExtention()
+    public void RunStringExtension()
     {
         // Метод расширения String
         string test = "test";
