@@ -1,7 +1,7 @@
 namespace NUnitTest;
 
 // Старый вариант
-[SetUpFixture]
+//[SetUpFixture] // Разкомментировать только при разборе Fixture
 public class BaseFixture
 {
     [OneTimeSetUp, Category("Main")]
