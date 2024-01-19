@@ -5,6 +5,7 @@ public class Program
     static void Main()
     {
         // Testing Task
+        
         TestTask testTask = new TestTask();
         testTask.Solve();
         
@@ -35,9 +36,10 @@ public class Program
         // Сортировка
         new OrderBy().RunQuerySyntax();
         new OrderBy().RunMethodSyntax();
-
+        
         // Группировка
-        // ????
+        new GroupBy().RunQuerySyntax();
+        new GroupBy().RunMethodSyntax();
         
         //Объединение, пересечение и разность коллекций:
         // разность
@@ -69,5 +71,15 @@ public class Program
         new SingleItem().RunMethodSyntax();
         
         // Методы Skip и Take
+        new SkipTake().RunQuerySyntax();
+        new SkipTake().RunMethodSyntax();
+        
+        // All  
+        // Any           
+        // Contains
+        
+        // Методы Join
+        new Join().RunQuerySyntax();
+        new Join().RunMethodSyntax();
     }
 }

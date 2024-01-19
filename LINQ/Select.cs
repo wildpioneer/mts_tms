@@ -8,8 +8,6 @@ public class Select
 
     public void RunQuerySyntax()
     {
-        var r = _testObjectSet.List[2].Equals(_testObjectSet.List[3]);
-        
         // Query Syntax
         Console.WriteLine("Query Syntax");
         

@@ -14,7 +14,7 @@ public class TestObjectSet : IEnumerable<Person>
             new Person("Alex", 45),
             new Person("Olga", 25),
             new Person("Stanislav", 36),
-            new Person("Tom", 45),
+            new Person("Tom", 45)
         };
 
         foreach (Person s in list)

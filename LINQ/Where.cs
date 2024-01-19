@@ -49,7 +49,6 @@ public class Where
 
         // public static IEnumerable<TSource> Where<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
         var methodResult = _testIntSet.Where(num => num % 2 == 0).Select(number => number);
-        //var methodResult = testSet.Where<int>(num => num % 2 == 0).Select(number => number);
 
         foreach (var i in methodResult)
         {
