@@ -34,13 +34,6 @@ public class FixtureExample : BaseTest
         Assert.Pass();
     }
 
-    // Test with an expected result
-    [Test(ExpectedResult = 4)]
-    public int Test4()
-    {
-        Console.WriteLine("Test4...");
-        return 2 + 2;
-    }
 
     // Async test with an expected result
     [Test(ExpectedResult = 4)]

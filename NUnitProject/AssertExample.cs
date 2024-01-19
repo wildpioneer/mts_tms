@@ -1,7 +1,6 @@
 namespace NUnitTest;
 
-[TestFixture]
-public class AssertExample : BaseFixture
+public class AssertExample
 {
     [Test]
     public void PassTest()
@@ -25,5 +24,11 @@ public class AssertExample : BaseFixture
         Assert.That(Calc.Sum(1, 2), Is.EqualTo(3));
     }
     
-    
+    // Test with an expected result
+    [Test(ExpectedResult = 4)]
+    public int ExpectedResultTest()
+    {
+        Console.WriteLine("ExpectedResultTest...");
+        return 2 + 2;
+    }
 }
