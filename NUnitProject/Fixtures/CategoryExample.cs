@@ -1,8 +1,8 @@
-namespace NUnitTest;
+namespace NUnitTest.Fixtures;
 
 // Категории тестов можно указывать как для всего класса, так и для отдельных методов.
 [TestFixture, Category("UnitTests")]
-public class CategoryExample1 : BaseTest
+public class CategoryExample : BaseTest
 {
     [Test, Category("MathOperations")]
     public void AdditionTest()

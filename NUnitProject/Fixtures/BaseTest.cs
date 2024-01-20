@@ -1,4 +1,4 @@
-namespace NUnitTest;
+namespace NUnitTest.Fixtures;
 
 public class BaseTest
 {

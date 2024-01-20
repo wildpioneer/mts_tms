@@ -1,4 +1,4 @@
-namespace NUnitTest;
+namespace NUnitTest.Fixtures;
 
 // Старый вариант
 //[SetUpFixture] // Разкомментировать только при разборе Fixture
