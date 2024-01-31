@@ -93,7 +93,7 @@ public class XPathSelectors : BaseTest
         // Поиск элемента у которого есть аттрибут id cо значением top-logo
         Assert.That(Driver.FindElement(By.XPath("//*[@id = 'top-logo']")).Displayed);
 
-        // Поиск элемента у которого есть аттрибут method cо значением и фттрибут target со значением
+        // Поиск элемента у которого есть аттрибут method cо значением и атрибут target со значением
         Assert.That(Driver.FindElement(By.XPath("//*[@method='post' and @target='_blank']")).Displayed);
 
         // Поиск элемента у которого значение аттрибута начинается с
