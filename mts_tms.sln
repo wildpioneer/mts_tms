@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Locators", "Locators\Locators.csproj", "{0EA5CE95-FC36-4EB2-A8A1-152E193B1FA6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumAdvanced", "SeleniumAdvanced\SeleniumAdvanced.csproj", "{0EA5CE95-FC36-4EB2-A8A1-152E193B1FA6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
