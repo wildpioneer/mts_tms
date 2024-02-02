@@ -1,3 +1,4 @@
+using NUnitTest.Helpers;
 using OpenQA.Selenium;
 
 namespace NUnitTest.Tests;
@@ -20,7 +21,27 @@ public class WaitsTest : BaseTest
     }
 
     [Test]
-    public void PresenceOfElementTest1() {
+    public void PresenceOfElementTest1()
+    {
+        WaitsHelper waitsHelper = new WaitsHelper(Driver, TimeSpan.FromSeconds(7));
+        
+        Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/dynamic_loading/1");
+
+        IWebElement button = waitsHelper.WaitForVisibilityLocatedBy(By.TagName("button"));
+        button.Click();
+        
+        Assert.IsTrue(waitsHelper.WaitForElementInvisible(By.TagName("button")));
+
+        IWebElement loading = waitsHelper.WaitForVisibilityLocatedBy(By.Id("loading"));
+        Assert.IsTrue(loading.Displayed);
+        
+        Assert.IsTrue(waitsHelper.WaitForElementInvisible(By.Id("loading")));
+        
+        Assert.IsTrue(waitsHelper.WaitForVisibilityLocatedBy(By.Id("finish")).Displayed);
+    }
+
+    [Test]
+    public void PresenceOfElementTest2() {
         Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/dynamic_loading/1");
 
         IWebElement button = WaitsHelper.WaitForVisibilityLocatedBy(By.TagName("button"));
