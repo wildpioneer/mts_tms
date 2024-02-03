@@ -9,7 +9,7 @@ public class WindowsTest : BaseTest
     {
         Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/windows");
 
-        String originalWindow = Driver.CurrentWindowHandle;
+        string originalWindow = Driver.CurrentWindowHandle;
         
         Driver.FindElement(By.LinkText("Click Here")).Click();
 
