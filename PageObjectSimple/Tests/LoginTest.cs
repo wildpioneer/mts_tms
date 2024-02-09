@@ -1,30 +1,23 @@
-using NUnitTest.Helpers.Configuration;
-using NUnitTest.Pages;
-using NUnitTest.Steps;
+using PageObjectSimple.Helpers.Configuration;
+using PageObjectSimple.Pages;
 
-namespace NUnitTest.Tests;
+namespace PageObjectSimple.Tests;
 
 public class LoginTest : BaseTest
 {
     [Test]
     public void SuccessfulLoginTest()
     {
-        // Actions = Действия
-        Assert.That(new LoginPage(Driver)
-            .SuccessFulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password)
-            .IsPageOpened());
-        
-        // Проверка
-        Assert.That(
-            UserSteps.SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password)
-                .TitleLabel.Text.Trim(), 
-            Is.EqualTo("All Projects"));
+        // Простой вид
+        LoginPage loginPage = new LoginPage(Driver);
+        DashboardPage dashboardPage = loginPage.SuccessFulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);
+        Assert.That(dashboardPage.IsPageOpened());
     }
     
     [Test]
     public void InvalidUsernameLoginTest()
     {
-        // Проверка
+        // Вид в стилистике Builder
         Assert.That(
             new LoginPage(Driver)
                 .IncorrectLogin("ssdd", "")

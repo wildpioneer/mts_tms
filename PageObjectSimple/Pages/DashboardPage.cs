@@ -1,6 +1,6 @@
 using OpenQA.Selenium;
 
-namespace NUnitTest.Pages
+namespace PageObjectSimple.Pages
 {
     public class DashboardPage : BasePage
     {

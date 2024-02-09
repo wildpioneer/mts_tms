@@ -1,7 +1,7 @@
-﻿using NUnitTest.Helpers.Configuration;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
+using PageObjectSimple.Helpers.Configuration;
 
-namespace NUnitTest.Core
+namespace PageObjectSimple.Core
 {
     public class Browser
     {

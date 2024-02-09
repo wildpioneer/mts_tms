@@ -1,4 +1,4 @@
-namespace NUnitTest.Helpers.Configuration;
+namespace PageObjectSimple.Helpers.Configuration;
 
 public class AppSettings
 {
