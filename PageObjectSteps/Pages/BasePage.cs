@@ -1,13 +1,11 @@
-using NUnitTest.Helpers;
-using NUnitTest.Helpers.Configuration;
 using OpenQA.Selenium;
+using PageObjectSteps.Helpers.Configuration;
 
-namespace NUnitTest.Pages;
+namespace PageObjectSteps.Pages;
 
 public abstract class BasePage
 {
     protected IWebDriver Driver;
-    protected WaitsHelper WaitsHelper { get; private set; }
 
     public BasePage(IWebDriver driver, bool openPageByUrl)
     {

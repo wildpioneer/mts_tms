@@ -1,4 +1,5 @@
 using NUnitTest.Helpers.Configuration;
+using NUnitTest.Pages;
 using NUnitTest.Steps;
 
 namespace NUnitTest.Tests;
@@ -6,11 +7,28 @@ namespace NUnitTest.Tests;
 public class LoginTest : BaseTest
 {
     [Test]
-    public void SuccessLoginTest()
+    public void SuccessfulLoginTest()
     {
-        NavigationSteps.NavigateToLoginPage();
-        NavigationSteps.SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);
-
-        Assert.IsTrue(NavigationSteps.DashboardPage.IsPageOpened());
+        // Actions = Действия
+        Assert.That(new LoginPage(Driver)
+            .SuccessFulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password)
+            .IsPageOpened());
+        
+        // Проверка
+        Assert.That(
+            UserSteps.SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password)
+                .TitleLabel.Text.Trim(), 
+            Is.EqualTo("All Projects"));
+    }
+    
+    [Test]
+    public void InvalidUsernameLoginTest()
+    {
+        // Проверка
+        Assert.That(
+            new LoginPage(Driver)
+                .IncorrectLogin("ssdd", "")
+                .ErrorLabel.Text.Trim(), 
+            Is.EqualTo("Email/Login or Password is incorrect. Please try again."));
     }
 }
