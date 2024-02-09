@@ -1,7 +1,8 @@
+using Allure.Pages;
+using NUnit.Allure.Attributes;
 using OpenQA.Selenium;
-using PageObjectSteps.Pages;
 
-namespace PageObjectSteps.Steps;
+namespace Allure.Steps;
 
 public class NavigationSteps : BaseStep
 {
@@ -17,7 +18,7 @@ public class NavigationSteps : BaseStep
         return new DashboardPage(Driver, true);
     }
     
-    
+    [AllureStep]
     public DashboardPage SuccessfulLogin(string username, string psw)
     {
         Login(username, psw);

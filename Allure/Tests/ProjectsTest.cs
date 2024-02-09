@@ -1,6 +1,6 @@
-using PageObjectSteps.Helpers.Configuration;
+using Allure.Helpers.Configuration;
 
-namespace PageObjectSteps.Tests;
+namespace Allure.Tests;
 
 public class ProjectsTest : BaseTest
 {
