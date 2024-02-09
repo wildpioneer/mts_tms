@@ -6,12 +6,17 @@ namespace PageObjectSteps.Steps;
 public class NavigationSteps : BaseStep
 {
     public NavigationSteps(IWebDriver driver) : base(driver) { }
-
-
+    
     public LoginPage NavigateToLoginPage()
     {
         return new LoginPage(Driver, true);
     }
+
+    public DashboardPage NavigateToDashboardPage()
+    {
+        return new DashboardPage(Driver, true);
+    }
+    
     
     public DashboardPage SuccessfulLogin(string username, string psw)
     {
