@@ -2,7 +2,7 @@ using OpenQA.Selenium;
 
 namespace PageFactory.Pages.ProjectPages;
 
-public class UpdateProjectPage(IWebDriver driver) : ProjectBasePage(driver)
+public class UpdateProjectPage(IWebDriver? driver, bool openByURL = false) : BasePage(driver, openByURL)
 {
     private const string END_POINT = "index.php?/admin/projects/add";
 

@@ -1,13 +1,14 @@
 using OpenQA.Selenium;
+using ValueOfObjects.Elements;
 
 namespace ValueOfObjects.Pages.ProjectPages;
 
-public class AddProjectPage(IWebDriver driver) : ProjectBasePage(driver)
+public class AddProjectPage(IWebDriver? driver, bool openByURL = false) : ProjectBasePage(driver, openByURL)
 {
     private const string END_POINT = "index.php?/admin/projects/add";
 
     // Описание элементов
-    private static readonly By AddButtonBy = By.Id("name");
+    private static readonly By AddButtonBy = By.Id("accept");
 
     protected override string GetEndpoint()
     {
@@ -16,9 +17,9 @@ public class AddProjectPage(IWebDriver driver) : ProjectBasePage(driver)
     
     protected override bool EvaluateLoadedStatus()
     {
-        throw new NotImplementedException();
+        return WaitsHelper.WaitForVisibilityLocatedBy(AddButtonBy).Displayed;
     }
     
     // Атомарные Методы
-    public IWebElement AddButton => Driver.FindElement(AddButtonBy);
+    public Button AddButton => new Button(Driver, AddButtonBy);
 }

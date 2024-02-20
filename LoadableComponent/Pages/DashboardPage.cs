@@ -2,7 +2,7 @@ using OpenQA.Selenium;
 
 namespace PageFactory.Pages
 {
-    public class DashboardPage(IWebDriver? driver) : BasePage(driver)
+    public class DashboardPage(IWebDriver? driver, bool openByURL = false) : BasePage(driver, openByURL)
     {
         private static string END_POINT = "index.php?/dashboard";
         
@@ -28,6 +28,6 @@ namespace PageFactory.Pages
         }
         
         // Методы
-        public IWebElement SidebarProjectsAddButton => Driver.FindElement(SidebarProjectsAddButtonBy);
+        public IWebElement SidebarProjectsAddButton => WaitsHelper.WaitForExists(SidebarProjectsAddButtonBy);
     }
 }

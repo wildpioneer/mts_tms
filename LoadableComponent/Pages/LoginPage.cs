@@ -2,7 +2,7 @@ using OpenQA.Selenium;
 
 namespace PageFactory.Pages
 {
-    public class LoginPage(IWebDriver? driver) : BasePage(driver)
+    public class LoginPage(IWebDriver? driver, bool openByURL = false) : BasePage(driver, openByURL)
     {
         private const string END_POINT = "";
 

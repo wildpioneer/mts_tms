@@ -2,7 +2,7 @@ using OpenQA.Selenium;
 
 namespace PageFactory.Pages.ProjectPages;
 
-public class AddProjectPage(IWebDriver driver) : ProjectBasePage(driver)
+public class AddProjectPage(IWebDriver? driver, bool openByURL = false) : BasePage(driver, openByURL)
 {
     private const string END_POINT = "index.php?/admin/projects/add";
 
@@ -20,5 +20,5 @@ public class AddProjectPage(IWebDriver driver) : ProjectBasePage(driver)
     }
     
     // Атомарные Методы
-    public IWebElement AddButton => Driver.FindElement(AddButtonBy);
+    public IWebElement AddButton => WaitsHelper.WaitForExists(AddButtonBy);
 }

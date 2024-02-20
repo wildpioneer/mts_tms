@@ -1,4 +1,5 @@
 using OpenQA.Selenium;
+using ValueOfObjects.Models;
 using ValueOfObjects.Pages;
 using ValueOfObjects.Pages.ProjectPages;
 
@@ -23,24 +24,24 @@ public class NavigationSteps : BaseStep
         return new AddProjectPage(Driver);
     }
     
-    public DashboardPage SuccessfulLogin(string username, string psw)
+    public DashboardPage SuccessfulLogin(User user)
     {
-        return Login<DashboardPage>(username, psw);
+        return Login<DashboardPage>(user);
     }
 
-    public LoginPage IncorrectLogin(string username, string psw)
+    public LoginPage IncorrectLogin(User user)
     {
-        return Login<LoginPage>(username, psw);
+        return Login<LoginPage>(user);
     }
     
-    public T Login<T>(string username, string psw) where T : BasePage
+    public T Login<T>(User user) where T : BasePage
     {
         LoginPage = new LoginPage(Driver);
         
-        LoginPage.EmailInput.SendKeys(username);
-        LoginPage.PswInput.SendKeys(psw);
+        LoginPage.EmailInput.SendKeys(user.Email);
+        LoginPage.PswInput.SendKeys(user.Password);
         LoginPage.LoginInButton.Click();
 
-        return (T)Activator.CreateInstance(typeof(T), Driver);
+        return (T)Activator.CreateInstance(typeof(T), Driver, false);
     }
 }

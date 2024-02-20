@@ -2,14 +2,13 @@ using OpenQA.Selenium;
 
 namespace ValueOfObjects.Pages
 {
-    public class DashboardPage(IWebDriver? driver) : BasePage(driver)
+    public class DashboardPage(IWebDriver? driver, bool openByURL = false) : BasePage(driver, openByURL)
     {
-        private static string END_POINT = "index.php?/dashboard";
+        private const string END_POINT = "index.php?/dashboard";
         
         // Описание элементов
         private static readonly By SidebarProjectsAddButtonBy = By.Id("sidebar-projects-add");
-
-
+        
         protected override bool EvaluateLoadedStatus()
         {
             try
@@ -27,6 +26,6 @@ namespace ValueOfObjects.Pages
             return END_POINT;
         }
 
-        public IWebElement SidebarProjectsAddButton => Driver.FindElement(SidebarProjectsAddButtonBy);
+        public IWebElement SidebarProjectsAddButton => WaitsHelper.WaitForExists(SidebarProjectsAddButtonBy);
     }
 }
