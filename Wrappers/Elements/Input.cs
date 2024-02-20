@@ -1,7 +1,6 @@
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
 
-namespace Wrappers.Wrappers
+namespace Wrappers.Elements
 {
     public class Input
     {
@@ -10,8 +9,6 @@ namespace Wrappers.Wrappers
         public Input(IWebDriver? driver, By @by)
         {
             _uiElement = new UIElement(driver, @by);
-            
-            //SelectElement 
         }
 
         public void Click() => _uiElement.Click();

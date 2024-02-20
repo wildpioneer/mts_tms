@@ -1,5 +1,5 @@
 using OpenQA.Selenium;
-using Wrappers.Wrappers;
+using Wrappers.Elements;
 
 namespace Wrappers.Pages
 {
