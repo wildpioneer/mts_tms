@@ -6,9 +6,9 @@ namespace Wrappers.Elements;
 
 public class Table
 {
-    private UIElement _uiElement;
-    private List<string> _columns;
-    private List<TableRow> _rows;
+    private readonly UIElement _uiElement;
+    private readonly List<string> _columns;
+    private readonly List<TableRow> _rows;
     
     
     /// <summary>

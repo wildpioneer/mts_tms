@@ -6,9 +6,9 @@ namespace Wrappers.Elements;
 
 public class RadioButton
 {
-    private List<UIElement> _uiElements;
-    private List<string> _values;
-    private List<string> _texts;
+    private readonly List<UIElement> _uiElements;
+    private readonly List<string> _values;
+    private readonly List<string> _texts;
     
     /// <summary>
     /// Локатор данного элемента должен использовать атрибут name
@@ -21,9 +21,9 @@ public class RadioButton
         _values = new List<string>();
         _texts = new List<string>();
         
-        WaitsHelper _waitsHelper = new WaitsHelper(webDriver, TimeSpan.FromSeconds(Configurator.WaitsTimeout));
+        var waitsHelper = new WaitsHelper(webDriver);
             
-        foreach (var webElement in _waitsHelper.WaitForPresenceOfAllElementsLocatedBy(by))
+        foreach (var webElement in waitsHelper.WaitForPresenceOfAllElementsLocatedBy(by))
         {
             UIElement uiElement = new UIElement(webDriver, webElement);
             _uiElements.Add(uiElement);

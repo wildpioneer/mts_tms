@@ -2,6 +2,7 @@ using System.Collections.ObjectModel;
 using System.Drawing;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.UI;
 using Wrappers.Helpers;
 using Wrappers.Helpers.Configuration;
 
@@ -17,7 +18,7 @@ public class UIElement : IWebElement
     private UIElement(IWebDriver webDriver)
     {
         _webDriver = webDriver;
-        _waitsHelper = new WaitsHelper(webDriver, TimeSpan.FromSeconds(Configurator.WaitsTimeout));
+        _waitsHelper = new WaitsHelper(webDriver);
         _actions = new Actions(webDriver);
     }
 

@@ -15,7 +15,6 @@ namespace Wrappers.Tests;
 public class BaseTest
 {
     protected IWebDriver Driver { get; private set; }
-    protected WaitsHelper WaitsHelper { get; private set; }
 
     protected NavigationSteps NavigationSteps;
     protected ProjectSteps ProjectSteps;
@@ -30,7 +29,6 @@ public class BaseTest
     public void Setup()
     {
         Driver = new Browser().Driver;
-        WaitsHelper = new WaitsHelper(Driver, TimeSpan.FromSeconds(Configurator.WaitsTimeout));
         
         // Инициализация Steps
         NavigationSteps = new NavigationSteps(Driver);

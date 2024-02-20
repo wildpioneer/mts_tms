@@ -3,12 +3,13 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using Wrappers.Elements;
+using Wrappers.Helpers.Configuration;
 
 namespace Wrappers.Helpers;
 
-public class WaitsHelper(IWebDriver driver, TimeSpan timeout)
+public class WaitsHelper(IWebDriver driver, TimeSpan? timeout = null)
 {
-    private readonly WebDriverWait _wait = new(driver, timeout);
+    private readonly WebDriverWait _wait = new(driver, timeout ?? TimeSpan.FromSeconds(Configurator.WaitsTimeout));
 
     public IWebElement WaitForVisibilityLocatedBy(By locator)
     {
