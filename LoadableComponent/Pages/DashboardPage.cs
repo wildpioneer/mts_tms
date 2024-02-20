@@ -9,6 +9,11 @@ namespace PageFactory.Pages
         // Описание элементов
         private static readonly By SidebarProjectsAddButtonBy = By.Id("sidebar-projects-add");
 
+        // Инициализация класса
+        protected override string GetEndpoint()
+        {
+            return END_POINT;
+        }
 
         protected override bool EvaluateLoadedStatus()
         {
@@ -22,11 +27,7 @@ namespace PageFactory.Pages
             }
         }
         
-        protected override string GetEndpoint()
-        {
-            return END_POINT;
-        }
-
+        // Методы
         public IWebElement SidebarProjectsAddButton => Driver.FindElement(SidebarProjectsAddButtonBy);
     }
 }

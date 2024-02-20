@@ -7,7 +7,6 @@
 
         <IsPackable>false</IsPackable>
         <IsTestProject>true</IsTestProject>
-        <RootNamespace>PageObjectSteps</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -30,9 +29,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Content Update="Resources\download.jpeg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
       <Content Update="appsettings.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>

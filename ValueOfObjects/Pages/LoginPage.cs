@@ -1,6 +1,6 @@
 using OpenQA.Selenium;
 
-namespace PageFactory.Pages
+namespace ValueOfObjects.Pages
 {
     public class LoginPage(IWebDriver? driver) : BasePage(driver)
     {
@@ -30,24 +30,5 @@ namespace PageFactory.Pages
         public IWebElement PswInput => WaitsHelper.WaitForExists(PswInputBy);
         public IWebElement RememberMeCheckbox => WaitsHelper.WaitForExists(RememberMeCheckboxBy);
         public IWebElement LoginInButton => WaitsHelper.WaitForExists(LoginInButtonBy);
-
-        // Комплексные
-        public DashboardPage SuccessfulLogin(string username, string password)
-        {
-            EmailInput.SendKeys(username);
-            PswInput.SendKeys(password);
-            LoginInButton.Click();
-
-            return new DashboardPage(Driver);
-        }
-
-        public LoginPage IncorrectLogin(string username, string password)
-        {
-            EmailInput.SendKeys(username);
-            PswInput.SendKeys(password);
-            LoginInButton.Click();
-
-            return this;
-        }
     }
 }

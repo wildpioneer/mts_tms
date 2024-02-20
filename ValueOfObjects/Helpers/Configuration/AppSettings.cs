@@ -1,4 +1,4 @@
-namespace PageObjectSteps.Helpers.Configuration;
+namespace ValueOfObjects.Helpers.Configuration;
 
 public class AppSettings
 {
