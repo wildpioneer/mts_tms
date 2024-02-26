@@ -6,8 +6,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValueOfObjects", "ValueOfOb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuilderPattern", "BuilderPattern\BuilderPattern.csproj", "{EFA98C72-8FBB-48C2-A141-05FC7012DA18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeSingleton", "NativeSingleton\NativeSingleton.csproj", "{930AB82D-C5F4-455B-A5B5-0414A0F25354}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,9 +24,5 @@ Global
 		{EFA98C72-8FBB-48C2-A141-05FC7012DA18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFA98C72-8FBB-48C2-A141-05FC7012DA18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFA98C72-8FBB-48C2-A141-05FC7012DA18}.Release|Any CPU.Build.0 = Release|Any CPU
-		{930AB82D-C5F4-455B-A5B5-0414A0F25354}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{930AB82D-C5F4-455B-A5B5-0414A0F25354}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{930AB82D-C5F4-455B-A5B5-0414A0F25354}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{930AB82D-C5F4-455B-A5B5-0414A0F25354}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
