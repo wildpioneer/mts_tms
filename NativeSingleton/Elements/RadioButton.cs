@@ -20,7 +20,7 @@ public class RadioButton
         _values = new List<string>();
         _texts = new List<string>();
         
-        WaitsHelper _waitsHelper = new WaitsHelper(TimeSpan.FromSeconds(Configurator.WaitsTimeout));
+        WaitsHelper _waitsHelper = new WaitsHelper();
             
         foreach (var webElement in _waitsHelper.WaitForPresenceOfAllElementsLocatedBy(by))
         {

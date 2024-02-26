@@ -8,7 +8,7 @@ namespace NativeSingleton.Core;
 public class BrowserSingleton
 {
     private static BrowserSingleton _instance;
-    private static IWebDriver driver;
+    private static IWebDriver _driver;
 
     // Приватный конструктор чтобы предотвратить создание экземпляров за пределами класса
     private BrowserSingleton()
@@ -24,7 +24,7 @@ public class BrowserSingleton
         chromeOptions.SetLoggingPreference(LogType.Driver, LogLevel.All);
 
         new DriverManager().SetUpDriver(new ChromeConfig());
-        driver = new ChromeDriver(chromeOptions);
+        _driver = new ChromeDriver(chromeOptions);
     }
 
     // Метод для получения единственного экземпляра класса
@@ -40,12 +40,12 @@ public class BrowserSingleton
     // Метод для получения экземпляра драйвера
     public IWebDriver GetDriver()
     {
-        return driver;
+        return _driver;
     }
 
     // Метод для закрытия драйвера
     public void CloseDriver()
     {
-        driver.Quit();
+        _driver.Quit();
     }
 }

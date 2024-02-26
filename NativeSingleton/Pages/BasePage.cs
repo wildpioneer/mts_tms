@@ -14,7 +14,7 @@ public abstract class BasePage : LoadableComponent<BasePage>
     protected BasePage(bool openByURL = false)
     {
         Driver = BrowserSingleton.GetInstance().GetDriver();
-        WaitsHelper = new WaitsHelper(TimeSpan.FromSeconds(Configurator.WaitsTimeout));
+        WaitsHelper = new WaitsHelper();
 
         if (openByURL) Load();
     }

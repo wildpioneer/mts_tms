@@ -10,15 +10,15 @@ namespace NativeSingleton.Elements;
 
 public class UIElement : IWebElement
 {
-    private IWebDriver _webDriver;
-    private WaitsHelper _waitsHelper;
-    private IWebElement _webElement;
-    private Actions _actions;
+    private readonly IWebDriver _webDriver;
+    private readonly WaitsHelper _waitsHelper;
+    private readonly IWebElement _webElement;
+    private readonly Actions _actions;
 
     private UIElement()
     {
         _webDriver = BrowserSingleton.GetInstance().GetDriver();
-        _waitsHelper = new WaitsHelper(TimeSpan.FromSeconds(Configurator.WaitsTimeout));
+        _waitsHelper = new WaitsHelper();
         _actions = new Actions(_webDriver);
     }
 

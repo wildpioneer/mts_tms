@@ -1,6 +1,7 @@
 using System.Collections.ObjectModel;
 using NativeSingleton.Core;
 using NativeSingleton.Elements;
+using NativeSingleton.Helpers.Configuration;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
@@ -10,6 +11,10 @@ namespace NativeSingleton.Helpers;
 public class WaitsHelper(TimeSpan timeout)
 {
     private readonly WebDriverWait _wait = new(BrowserSingleton.GetInstance().GetDriver(), timeout);
+
+    public WaitsHelper() : this(TimeSpan.FromSeconds(Configurator.WaitsTimeout))
+    {
+    }
 
     public IWebElement WaitForVisibilityLocatedBy(By locator)
     {
