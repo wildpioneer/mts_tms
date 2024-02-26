@@ -1,20 +1,20 @@
-using OpenQA.Selenium;
-
 namespace NativeSingleton.Tests;
 
 public class BaseTest
 {
-    [OneTimeSetUp]
-    public void Setup()
+    protected static WebDriverSingleton Instance = WebDriverSingleton.GetInstance();
+    
+    //[OneTimeSetUp]
+    public static void Start()
     {
-        WebDriverSingleton.GetInstance().GetDriver();
-        
-        WebDriverSingleton.GetInstance().GetDriver().Navigate().GoToUrl("http://onliner.by");
+        Console.WriteLine("OneTimeSetUp");
+        Instance.GetDriver().Navigate().GoToUrl("http://onliner.by");
     }
 
-    [OneTimeTearDown]
-    public void TearDown()
+    //[OneTimeTearDown]
+    public static void Finish()
     {
-        WebDriverSingleton.GetInstance().CloseDriver();
+        Console.WriteLine("OneTimeTearDown");   
+        Instance.CloseDriver();
     }
 }
