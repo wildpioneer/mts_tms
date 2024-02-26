@@ -1,17 +1,22 @@
+using NativeSingleton.Core;
+using NativeSingleton.Helpers.Configuration;
+using NativeSingleton.Steps;
+
 namespace NativeSingleton.Tests;
 
 [SetUpFixture]
 public class MySetUpFixture
 {
-    //[OneTimeSetUp]
+    [OneTimeSetUp]
     public void OneTimeSetUp()
     {
-        WebDriverSingleton.GetInstance().GetDriver().Navigate().GoToUrl("http://onliner.by");
+        BrowserSingleton.GetInstance().GetDriver().Navigate().GoToUrl(Configurator.AppSettings.URL);
+        new NavigationSteps().SuccessfulLoginByAdmin();
     }
 
     [OneTimeTearDown]
     public void OneTimeTearDown()
     {
-        WebDriverSingleton.GetInstance().CloseDriver();
+        BrowserSingleton.GetInstance().CloseDriver();
     }
 }

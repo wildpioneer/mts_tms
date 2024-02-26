@@ -1,11 +1,11 @@
 namespace NativeSingleton.Tests;
 
 [TestFixture]
-public class LoginTest
+public class LoginTest : BaseTest
 {
     [Test]
     public void SuccessfulLoginTest()
     {
-        WebDriverSingleton.GetInstance().GetDriver().Navigate().GoToUrl("http://google.com");
+        
     }
 }

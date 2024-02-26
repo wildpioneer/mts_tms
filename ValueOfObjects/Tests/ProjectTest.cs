@@ -1,13 +1,14 @@
-using NativeSingleton.Models;
+using ValueOfObjects.Models;
 
-namespace NativeSingleton.Tests;
+namespace ValueOfObjects.Tests;
 
-[TestFixture]
 public class ProjectTest : BaseTest
 {
     [Test]
     public void SuccessfulAddProjectTest()
     {
+        _navigationSteps.SuccessfulLogin(Admin);
+
         Project expectedProject = new Project()
         {
             ProjectName = "WP Test 01",
@@ -16,7 +17,7 @@ public class ProjectTest : BaseTest
             ProjectType = 1
         };
 
-        Assert.That(ProjectSteps.AddProject(expectedProject).SuccessMessage.Text.Trim(),
+        Assert.That(_projectSteps.AddProject(expectedProject).SuccessMessage.Text.Trim(),
             Is.EqualTo("Successfully added the new project."));
     }
 }

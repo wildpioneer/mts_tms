@@ -1,18 +1,17 @@
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
 
-namespace NativeSingleton;
+namespace NativeSingleton.Core;
 
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-
-public class WebDriverSingleton
+public class BrowserSingleton
 {
-    private static WebDriverSingleton _instance;
+    private static BrowserSingleton _instance;
     private static IWebDriver driver;
 
     // Приватный конструктор чтобы предотвратить создание экземпляров за пределами класса
-    private WebDriverSingleton()
+    private BrowserSingleton()
     {
         // Инициализация драйвера здесь
         var chromeOptions = new ChromeOptions();
@@ -29,11 +28,11 @@ public class WebDriverSingleton
     }
 
     // Метод для получения единственного экземпляра класса
-    public static WebDriverSingleton GetInstance()
+    public static BrowserSingleton GetInstance()
     {
         if (_instance == null)
         {
-            _instance = new WebDriverSingleton();
+            _instance = new BrowserSingleton();
         }
         return _instance;
     }
