@@ -9,7 +9,10 @@ public class ProjectDetailsPage(bool openByURL = false) : BasePage(openByURL)
     // Описание элементов
     private static readonly By OverviewTabBy = By.Id("navigation-projects");
 
-    
+    public ProjectDetailsPage() : this(false)
+    {
+    }
+
     protected override bool EvaluateLoadedStatus()
     {
         return OverviewTab.Displayed;

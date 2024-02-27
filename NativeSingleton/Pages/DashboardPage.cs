@@ -2,11 +2,15 @@ using OpenQA.Selenium;
 
 namespace NativeSingleton.Pages
 {
-    public class DashboardPage(bool openByURL = false) : BasePage(openByURL)
+    public class DashboardPage(bool openByURL) : BasePage(openByURL)
     {
         private const string END_POINT = "index.php?/dashboard";
         
         // Описание элементов
+        public DashboardPage() : this(false)
+        {
+        }
+
         private static readonly By SidebarProjectsAddButtonBy = By.Id("sidebar-projects-add");
         
         protected override bool EvaluateLoadedStatus()

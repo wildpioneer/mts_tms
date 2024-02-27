@@ -10,6 +10,10 @@ public class AddProjectPage(bool openByURL = false) : ProjectBasePage(openByURL)
     // Описание элементов
     private static readonly By AddButtonBy = By.Id("accept");
 
+    public AddProjectPage() : this(false)
+    {
+    }
+
     protected override string GetEndpoint()
     {
         return END_POINT;

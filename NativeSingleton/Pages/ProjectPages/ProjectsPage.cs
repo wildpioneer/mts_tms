@@ -10,6 +10,10 @@ public class ProjectsPage(bool openByURL = false) : BasePage(openByURL)
     private static readonly By TitleBy = By.XPath("//*[contains(@class, 'page_title') and contains(text(), 'Projects')]");
     private static readonly By SuccessMessageBy = By.ClassName("message-success");
 
+    public ProjectsPage() : this(false)
+    {
+    }
+
     protected override bool EvaluateLoadedStatus()
     {
         return Title.Displayed;

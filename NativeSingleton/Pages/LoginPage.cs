@@ -14,6 +14,10 @@ namespace NativeSingleton.Pages
         private static readonly By ErrorLabelBy = By.CssSelector("[data-testid='loginErrorText']");
 
         // Инициализация класса
+        public LoginPage() : this(false)
+        {
+        }
+
         protected override string GetEndpoint()
         {
             return END_POINT;

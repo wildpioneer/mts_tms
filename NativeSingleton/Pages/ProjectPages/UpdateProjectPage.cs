@@ -9,6 +9,10 @@ public class UpdateProjectPage(bool openByURL = false) : ProjectBasePage(openByU
     // Описание элементов
     private static readonly By SaveButtonBy = By.Id("name");
     
+    public UpdateProjectPage() : this(false)
+    {
+    }
+
     protected override bool EvaluateLoadedStatus()
     {
         return WaitsHelper.WaitForExists(SaveButtonBy).Displayed;
