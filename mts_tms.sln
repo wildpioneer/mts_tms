@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuilderPattern", "BuilderPa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConceptBuilderPattern", "ConceptBuilderPattern\ConceptBuilderPattern.csproj", "{05BC4921-6D6F-444F-A656-426D91061F66}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainOfInvocations", "ChainOfInvocations\ChainOfInvocations.csproj", "{DD3F16EA-6E51-4540-91AB-113F78BA1AF4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{05BC4921-6D6F-444F-A656-426D91061F66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05BC4921-6D6F-444F-A656-426D91061F66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05BC4921-6D6F-444F-A656-426D91061F66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD3F16EA-6E51-4540-91AB-113F78BA1AF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD3F16EA-6E51-4540-91AB-113F78BA1AF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD3F16EA-6E51-4540-91AB-113F78BA1AF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD3F16EA-6E51-4540-91AB-113F78BA1AF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
