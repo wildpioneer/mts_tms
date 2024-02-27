@@ -1,15 +1,18 @@
-using BuilderPattern.Core;
-using BuilderPattern.Helpers.Configuration;
-using BuilderPattern.Models;
-using BuilderPattern.Steps;
+using NLog;
 using OpenQA.Selenium;
+using ValueOfObjects.Core;
+using ValueOfObjects.Helpers.Configuration;
+using ValueOfObjects.Models;
+using ValueOfObjects.Steps;
 
-namespace BuilderPattern.Tests;
+namespace ValueOfObjects.Tests;
 
 [Parallelizable(scope: ParallelScope.All)]
 [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
 public class BaseTest
 {
+    protected static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+    
     protected IWebDriver Driver { get; private set; }
 
     protected NavigationSteps _navigationSteps;
@@ -20,7 +23,10 @@ public class BaseTest
     [SetUp]
     public void Setup()
     {
+        Logger.Info("Method setup started...");
+        
         Driver = new Browser().Driver;
+        Logger.Debug(Driver);
 
         _navigationSteps = new NavigationSteps(Driver);
         _projectSteps = new ProjectSteps(Driver);
@@ -30,6 +36,7 @@ public class BaseTest
             Email = Configurator.AppSettings.Username,
             Password = Configurator.AppSettings.Password
         };
+        Logger.Info(Admin);
         
         Driver.Navigate().GoToUrl(Configurator.AppSettings.URL);
     }

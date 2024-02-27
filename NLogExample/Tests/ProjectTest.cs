@@ -1,7 +1,8 @@
-using BuilderPattern.Models;
+using ValueOfObjects.Models;
 
-namespace BuilderPattern.Tests;
+namespace ValueOfObjects.Tests;
 
+//[TestFixture]
 public class ProjectTest : BaseTest
 {
     [Test]
@@ -9,12 +10,13 @@ public class ProjectTest : BaseTest
     {
         _navigationSteps.SuccessfulLogin(Admin);
 
-        Project expectedProject = new Project.Builder()
-            .SetProjectName("WP Test 01")
-            .SetAnnouncement("Test Details")
-            .SetFlag(false)
-            .SetProjectType(1)
-            .Build();
+        Project expectedProject = new Project()
+        {
+            ProjectName = "WP Test 01",
+            Announcement = "Test Details",
+            Flag = false,
+            ProjectType = 1
+        };
 
         Assert.That(_projectSteps.AddProject(expectedProject).SuccessMessage.Text.Trim(),
             Is.EqualTo("Successfully added the new project."));
