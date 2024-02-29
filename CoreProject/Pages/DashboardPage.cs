@@ -27,5 +27,10 @@ namespace BDD_Project.Pages
         }
 
         public IWebElement SidebarProjectsAddButton => WaitsHelper.WaitForExists(SidebarProjectsAddButtonBy);
+        
+        public List<string> GetProjectIDsFromTable()
+        {
+            return Driver.FindElements(By.CssSelector(".row.project[id]")).Select(element => element.GetAttribute("id").Split("-")[1]).ToList();
+        }
     }
 }

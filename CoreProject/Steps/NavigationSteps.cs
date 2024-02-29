@@ -11,7 +11,7 @@ public class NavigationSteps : BaseStep
     
     public LoginPage NavigateToLoginPage()
     {
-        return new LoginPage(Driver);
+        return new LoginPage(Driver, true);
     }
 
     public DashboardPage NavigateToDashboardPage()
