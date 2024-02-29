@@ -38,7 +38,6 @@
       <Content Include="appsettings.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
-      <None Remove="NLog.config" />
       <None Include="NLog.config.colored">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
