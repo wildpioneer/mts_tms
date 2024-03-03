@@ -66,4 +66,10 @@ public class FirstStepDefinition
     {
         _driver?.Quit();
     }
+
+    [Given(@"a blog post named ""(.*)"" with Markdown body")]
+    public void GivenABlogPostNamedWithMarkdownBody(string random, string multilineText)
+    {
+        ScenarioContext.StepIsPending();
+    }
 }
