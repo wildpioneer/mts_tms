@@ -1,7 +1,7 @@
 using System.Reflection;
 using Microsoft.Extensions.Configuration;
 
-namespace ValueOfObjects.Helpers.Configuration
+namespace RestSharpApi.Helpers.Configuration
 {
     public static class Configurator
     {

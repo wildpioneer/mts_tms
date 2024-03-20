@@ -1,4 +1,4 @@
-namespace ValueOfObjects.Helpers.Configuration;
+namespace RestSharpApi.Helpers.Configuration;
 
 public class AppSettings
 {
