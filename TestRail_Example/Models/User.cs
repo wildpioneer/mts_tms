@@ -1,4 +1,6 @@
-namespace TestRail.ApiTesting;
+using TestRail_Example.Models.Enums;
+
+namespace TestRail_Example.Models;
 
 public record User
 {

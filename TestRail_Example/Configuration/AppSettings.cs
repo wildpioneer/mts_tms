@@ -1,4 +1,4 @@
-namespace TestRail.ApiTesting;
+namespace TestRail_Example.Configuration;
 
 public class AppSettings
 {

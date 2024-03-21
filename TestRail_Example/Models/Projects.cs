@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace TestRail.ApiTesting;
+namespace TestRail_Example.Models;
 
 public record Projects
 {

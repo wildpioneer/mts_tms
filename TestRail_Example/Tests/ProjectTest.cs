@@ -3,7 +3,7 @@ using Bogus;
 using NLog;
 using NUnit.Framework;
 using TestRail_Example.Fakers;
-using TestRail.ApiTesting;
+using TestRail_Example.Models;
 
 namespace TestRail_Example.Tests;
 

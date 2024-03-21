@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using Bogus;
 using TestRail_Example.Fakers;
-using TestRail.ApiTesting;
+using TestRail_Example.Models;
 
 namespace TestRail_Example.Tests;
 

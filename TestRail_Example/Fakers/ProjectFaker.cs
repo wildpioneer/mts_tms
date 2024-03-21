@@ -1,5 +1,5 @@
 using Bogus;
-using TestRail.ApiTesting;
+using TestRail_Example.Models;
 
 namespace TestRail_Example.Fakers;
 

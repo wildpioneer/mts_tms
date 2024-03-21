@@ -1,4 +1,4 @@
-namespace TestRail.ApiTesting;
+namespace TestRail_Example.Models.Enums;
 
 public enum UserType
 {

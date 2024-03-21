@@ -1,6 +1,6 @@
 using System.Net;
 using System.Threading.Tasks;
-using TestRail.ApiTesting;
+using TestRail_Example.Models;
 
 namespace TestRail_Example.Services;
 

@@ -1,7 +1,7 @@
 using System.Net;
 using RestSharp;
 using TestRail_Example.Clients;
-using TestRail.ApiTesting;
+using TestRail_Example.Models;
 
 namespace TestRail_Example.Services;
 
