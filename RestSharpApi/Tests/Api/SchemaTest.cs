@@ -1,74 +1,82 @@
+using System.Net;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Schema;
+using NLog;
+using RestSharp;
 using RestSharp.Authenticators;
 using RestSharpApi.Models;
 
-namespace RestSharpApi.Tests.Api;
-
-using System;
-using System.IO;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using RestSharp;
-using Newtonsoft.Json.Schema;
+namespace RestSharpApi.Tests;
 
 public class SchemaTest
 {
+    private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+
     private const string BaseRestUri = "https://aqa2504.testrail.io/";
-    
+
     [Test]
     public void JsonSchemaTest()
     {
+        const string endpoint = "index.php?/api/v2/add_project";
+
+        Project expectedProject = new Project
+        {
+            Name = "WP Project 2",
+            Announcement = "Test project description",
+            IsShowAnnouncement = true,
+            SuiteMode = 2
+        };
+
         // Загрузка JSON-схемы из файла
         string schemaJson = File.ReadAllText(@"Resources/schema.json");
 
-        // Создание экземпляра JSON-схемы
+        // Создем экземпляр JSON-схемы
         JSchema schema = JSchema.Parse(schemaJson);
 
-        // Создание JSON-объекта для отправки запроса
-        const string endpoint = "index.php?/api/v2/add_project";
-        
-        Project testProject = new Project
+        var options = new RestClientOptions(BaseRestUri)
         {
-            Name = "WP Project 1",
-            Announcement = "Test project's description",
-            ShowAnnouncement = true,
-            SuiteMode = 1
-        };
-        
-        var options = new RestClientOptions(BaseRestUri) {
             Authenticator = new HttpBasicAuthenticator("atrostyanko@gmail.com", "Qwertyu_1")
         };
-        /*
-         * Content-Type
-         * RestSharp will use the correct content type by default. Avoid adding the Content-Type header manually
-         * to your requests unless you are absolutely sure it is required. You can add a custom content type to the body parameter itself.
-         */
-        
+
+        // Setup Rest Client
         var client = new RestClient(options);
-        
-        var request = new RestRequest(endpoint)
-            .AddJsonBody(testProject);
-        
+
+        // Setup Request
+        var request = new RestRequest(endpoint).AddJsonBody(expectedProject);
+
+        // Execute Request
         var response = client.ExecutePost(request);
 
-        // Проверка статуса ответа
-        if (response.StatusCode == System.Net.HttpStatusCode.OK)
+        // Проверяем статус ответа
+        if (response.StatusCode == HttpStatusCode.OK)
         {
-            // Получение тела ответа в виде JSON-объекта
+            // Получаем тело ответа в виде JObject
             JObject responseData = JObject.Parse(response.Content);
 
             // Проверка соответствия ответа JSON-схеме
-            if (responseData.IsValid(schema))
-            {
-                Console.WriteLine("Ответ соответствует JSON-схеме.");
-            }
-            else
-            {
-                Console.WriteLine("Ответ не соответствует JSON-схеме:");
-            }
+            Assert.That(responseData.IsValid(schema));
         }
-        else
-        {
-            Console.WriteLine($"Ошибка запроса: {response.ErrorMessage}");
-        }
+    }
+
+    [Test]
+    public void SchemaTest1()
+    {
+        string schemaJson = @"{
+            'description': 'A person',
+            'type': 'object',
+            'properties':
+                {
+                    'name': {'type':'string'},
+                    'hobbies': {
+                        'type': 'array',
+                        'items': {'type':'string'}
+                    }
+                }
+        }";
+
+        JsonSchema schema = JsonSchema.Parse(schemaJson);
+
+        JObject person = JObject.Parse(@"{'name': 'James','hobbies': ['.NET', 'Blogging', 'Reading', 'Xbox', 'LOLCATS']}");
+        Assert.That(person.IsValid(schema));
     }
 }

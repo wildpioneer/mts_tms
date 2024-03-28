@@ -9,7 +9,7 @@ public record Project
     [JsonPropertyName("announcement")] public string? Announcement { get; init; }
 
     [JsonPropertyName("show_announcement")]
-    public bool ShowAnnouncement { get; set; }
+    public bool IsShowAnnouncement { get; set; }
 
     [JsonPropertyName("is_completed")] public bool IsCompleted { get; set; }
     [JsonPropertyName("completed_on")] public string? CompletedOn { get; set; }
@@ -20,8 +20,8 @@ public record Project
     public override string ToString()
     {
         return
-            $"{nameof(Id)}: {Id}, {nameof(Name)}: {Name}, {nameof(Announcement)}: {Announcement}, {nameof(ShowAnnouncement)}: " +
-            $"{ShowAnnouncement}, {nameof(IsCompleted)}: {IsCompleted}, {nameof(CompletedOn)}: {CompletedOn}, {nameof(SuiteMode)}: " +
+            $"{nameof(Id)}: {Id}, {nameof(Name)}: {Name}, {nameof(Announcement)}: {Announcement}, {nameof(IsShowAnnouncement)}: " +
+            $"{IsShowAnnouncement}, {nameof(IsCompleted)}: {IsCompleted}, {nameof(CompletedOn)}: {CompletedOn}, {nameof(SuiteMode)}: " +
             $"{SuiteMode}, {nameof(DefaultRoleId)}: {DefaultRoleId}, {nameof(Url)}: {Url}";
     }
 }

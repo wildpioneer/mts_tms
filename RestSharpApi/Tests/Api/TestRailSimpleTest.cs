@@ -104,7 +104,7 @@ public class TestRailSimpleTest
         {
             Name = "WP Project 1",
             Announcement = "Test project description",
-            ShowAnnouncement = true,
+            IsShowAnnouncement = true,
             SuiteMode = 1
         };
 
