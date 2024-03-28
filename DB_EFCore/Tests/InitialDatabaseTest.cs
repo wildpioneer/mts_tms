@@ -1,13 +1,12 @@
 using DB_EFCore.Connector;
 using DB_EFCore.Models;
-using Microsoft.Extensions.Logging;
 using NLog;
 
 namespace DB_EFCore.Tests
 {
     public class InitialDatabaseTest
     {
-        private readonly Logger _logger = NLog.LogManager.GetCurrentClassLogger();
+        private readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
         [Test]
         public void DB_Test1()
