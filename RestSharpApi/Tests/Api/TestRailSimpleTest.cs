@@ -61,7 +61,7 @@ public class TestRailSimpleTest
         Dictionary<string, object> json = new Dictionary<string, object>();
         json.Add("name", "WP Project 1");
         json.Add("announcement", "Test project's description");
-        json.Add("show_announcement", true);
+        json.Add("show_announcemen", true);
         json.Add("suite_mode", 1);
 
 

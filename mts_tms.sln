@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestSharpApi", "RestSharpAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestRail_Example", "TestRail_Example\TestRail_Example.csproj", "{50C5A94F-61DF-4D3B-90B9-8FB7E866585D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB_Npgsql", "DB_Npgsql\DB_Npgsql.csproj", "{C84AC7A8-AF11-4F82-970E-4310E25841B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{50C5A94F-61DF-4D3B-90B9-8FB7E866585D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50C5A94F-61DF-4D3B-90B9-8FB7E866585D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50C5A94F-61DF-4D3B-90B9-8FB7E866585D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C84AC7A8-AF11-4F82-970E-4310E25841B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C84AC7A8-AF11-4F82-970E-4310E25841B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C84AC7A8-AF11-4F82-970E-4310E25841B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C84AC7A8-AF11-4F82-970E-4310E25841B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
