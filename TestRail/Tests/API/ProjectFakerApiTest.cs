@@ -5,11 +5,11 @@ using TestRail.Models;
 
 namespace TestRail.Tests;
 
-public class ProjectFakerTest : BaseTest
+public class ProjectFakerApiTest : BaseApiTest
 {
     private readonly Logger _logger = LogManager.GetCurrentClassLogger();
     private Project _project = null!;
-    private static Faker<Project> Project => new ProjectFaker();
+    private static Faker<Project> Project => new ProjectFakerApi();
     
     [Test]
     [Order(1)]

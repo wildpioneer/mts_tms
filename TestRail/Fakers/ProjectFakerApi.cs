@@ -3,9 +3,9 @@ using TestRail.Models;
 
 namespace TestRail.Fakers;
 
-public sealed class ProjectFaker : Faker<Project>
+public sealed class ProjectFakerApi : Faker<Project>
 {
-    public ProjectFaker()
+    public ProjectFakerApi()
     {
         RuleFor(b => b.Name, f => f.Random.AlphaNumeric(20));
         RuleFor(b => b.Announcement, f => f.Random.Words(50));

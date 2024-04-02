@@ -7,7 +7,7 @@ using TestRail.Models;
 
 namespace TestRail.Tests;
 
-public class ProjectTest : BaseTest
+public class ProjectApiTest : BaseApiTest
 {
     private readonly Logger _logger = LogManager.GetCurrentClassLogger();
     private Project _project = null!;

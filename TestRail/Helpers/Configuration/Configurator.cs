@@ -75,5 +75,9 @@ namespace TestRail.Configuration
         public static User? Admin => Users.Find(x => x?.UserType == UserType.Admin);
 
         public static User? UserByUsername(string username) => Users.Find(x => x?.Username == username);
+        
+        public static string? BrowserType => Configuration[nameof(BrowserType)];
+
+        public static double WaitsTimeout => Double.Parse(Configuration[nameof(WaitsTimeout)]);
     }
 }

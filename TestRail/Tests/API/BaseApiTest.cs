@@ -3,7 +3,7 @@ using TestRail.Services;
 
 namespace TestRail.Tests;
 
-public class BaseTest
+public class BaseApiTest
 {
     private readonly Logger _logger = LogManager.GetCurrentClassLogger();
     protected ProjectService? ProjectService;
