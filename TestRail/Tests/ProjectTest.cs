@@ -36,8 +36,6 @@ public class ProjectTest : BaseTest
         _logger.Info(ProjectService?.GetProject(_project.Id.ToString()).Result.ToString());
     }
 
-    [Test]
-    [Order(3)]
     public void GetProjectsTest()
     {
         var projects = ProjectService?.GetProjects().Result;
