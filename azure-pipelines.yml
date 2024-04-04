@@ -32,10 +32,10 @@ steps:
       allureVersion: 2.27.0
       testResultsDir: 'TestRail/bin/Debug/net8.0/allure-results'
 
-  - task: AllureGenerate@1
-    inputs:
-      resultsDir: 'TestRail/bin/Debug/net8.0/allure-results'
-      targetDir: 'allure-report/$(Build.BuildNumber)'
+#  - task: AllureGenerate@1
+#    inputs:
+#      resultsDir: 'TestRail/bin/Debug/net8.0/allure-results'
+#      targetDir: 'allure-report/$(Build.BuildNumber)'
 
   - task: PublishPipelineArtifact@1
     inputs:
