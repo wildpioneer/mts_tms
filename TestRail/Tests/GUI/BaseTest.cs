@@ -1,3 +1,4 @@
+using Allure.NUnit;
 using OpenQA.Selenium;
 using TestRail.Configuration;
 using TestRail.Core;
@@ -8,6 +9,7 @@ namespace TestRail.Tests.GUI;
 
 [Parallelizable(scope: ParallelScope.All)]
 [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
+[AllureNUnit]
 public class BaseTest
 {
     protected IWebDriver Driver { get; private set; }
