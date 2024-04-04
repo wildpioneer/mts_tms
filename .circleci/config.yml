@@ -12,10 +12,10 @@ jobs:
       image: windows-server-2019-cuda:current
     steps:
       - checkout
-      # Replace this with a real test runner invocation
       - run:
           name: Run tests
           command: dotnet test
+          
 workflows:
   example:
     jobs:
