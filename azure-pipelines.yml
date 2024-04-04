@@ -30,3 +30,14 @@ steps:
   inputs:
     resultsDir: 'TestRail/bin/Debug/net8.0/allure-results'
     targetDir: 'allure-report/$(Build.BuildNumber)'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'NUnit'
+    testResultsFiles: '**/TEST-*.xml'
+    mergeTestResults: true
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)'
+    publishLocation: 'pipeline'
