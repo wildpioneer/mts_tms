@@ -7,9 +7,9 @@ namespace TestRail.Services;
 
 public class ProjectService : IProjectService, IDisposable
 {
-    private readonly RestClientExtended _client;
+    private readonly RestClientExtended? _client;
 
-    public ProjectService(RestClientExtended client)
+    public ProjectService(RestClientExtended? client)
     {
         _client = client;
     }

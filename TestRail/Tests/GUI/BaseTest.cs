@@ -10,7 +10,7 @@ namespace TestRail.Tests.GUI;
 [Parallelizable(scope: ParallelScope.All)]
 [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
 [AllureNUnit]
-public class BaseTest
+public class BaseTest : BaseSuite
 {
     protected IWebDriver Driver { get; private set; }
 

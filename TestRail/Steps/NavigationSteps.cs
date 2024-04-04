@@ -1,3 +1,4 @@
+using Allure.NUnit.Attributes;
 using OpenQA.Selenium;
 using TestRail.Models;
 using TestRail.Pages;
@@ -24,11 +25,13 @@ public class NavigationSteps : BaseStep
         return new AddProjectPage(Driver);
     }
     
+    [AllureStep]
     public DashboardPage SuccessfulLogin(User user)
     {
         return Login<DashboardPage>(user);
     }
 
+    [AllureStep]
     public LoginPage IncorrectLogin(User user)
     {
         return Login<LoginPage>(user);
