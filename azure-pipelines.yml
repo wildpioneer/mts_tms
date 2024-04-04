@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 trigger:
-- master
+  - master
 
 pool:
   vmImage: 'windows-latest'
@@ -15,29 +15,29 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- task: NuGetToolInstaller@1
+  - task: NuGetToolInstaller@1
 
-- task: NuGetCommand@2
-  inputs:
-    restoreSolution: '$(solution)'
+  - task: NuGetCommand@2
+    inputs:
+      restoreSolution: '$(solution)'
 
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'test'
-    projects: 'TestRail/TestRail.csproj'
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: 'test'
+      projects: 'TestRail/TestRail.csproj'
 
-- task: AllureGenerate@1
-  inputs:
-    resultsDir: 'TestRail/bin/Debug/net8.0/allure-results'
-    targetDir: 'allure-report/$(Build.BuildNumber)'
+  - task: PublishAllureReport@1
+    displayName: Publish Report
+    inputs:
+      allureVersion: 2.27.0
+      testResultsDir: 'TestRail/bin/Debug/net8.0/allure-results'
 
-- task: PublishTestResults@2
-  inputs:
-    testResultsFormat: 'NUnit'
-    testResultsFiles: '**/TEST-*.xml'
-    mergeTestResults: true
+  - task: AllureGenerate@1
+    inputs:
+      resultsDir: 'TestRail/bin/Debug/net8.0/allure-results'
+      targetDir: 'allure-report/$(Build.BuildNumber)'
 
-- task: PublishPipelineArtifact@1
-  inputs:
-    targetPath: '$(Pipeline.Workspace)'
-    publishLocation: 'pipeline'
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: '$(Pipeline.Workspace)'
+      publishLocation: 'pipeline'
