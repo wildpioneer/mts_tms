@@ -1,0 +1,4 @@
+2024/04/05 12:48:42.102|DEBUG|Post request to : index.php?/api/v2/delete_project/{project_id} 
+2024/04/05 12:48:42.102|DEBUG|body : {} 
+2024/04/05 12:48:42.432|DEBUG|Request finished with status code : OK 
+2024/04/05 12:48:42.432|INFO|OK 
