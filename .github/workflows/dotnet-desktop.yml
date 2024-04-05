@@ -1,16 +1,26 @@
 name: .NET Core Desktop
 
 on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+  workflow_dispatch: 
+    inputs: 
+      deployment_target:
+        description: Choose target
+        required: true
+        default: choice
+        options:
+          - smoke_test
+          - regression_test
+
+#  push:
+#    branches: [ "master" ]
+#  pull_request:
+#    branches: [ "master" ]
 
 jobs:
   test:
     strategy:
       matrix:
-        configuration: [ Release ]
+        configuration: [ Debug ]
 
     runs-on: ubuntu-latest
 
@@ -30,15 +40,25 @@ jobs:
 
       # Build Dependencies
       - name: Build
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build --configuration Debug --no-restore
 
-      # Execute all unit tests in the solution
+      # Execute all tests in the solution
       - name: Execute tests
         run: dotnet test
 
+      # Execute Smoke tests in the solution
+      - name: Execute Smoke tests
+        if: "github.event.inputs.deployment_target == 'smoke_test'"
+        run: dotnet test --filter Category=Smoke
+
+      # Execute Regression tests in the solution
+      - name: Execute Regression  tests
+        if: "github.event.inputs.deployment_target == 'smoke_test'"
+        run: dotnet test --filter Category=Regression
+
       # Folder 1
       - name: Get files
-        run: ls TestRail/bin/Debug/net8.0
+        run: ls TestRail/bin/ Debug/net8.0
         
       - name: Load test report history
         uses: actions/checkout@v3

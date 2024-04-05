@@ -13,6 +13,8 @@ public class ProjectFakerApiTest : BaseApiTest
     
     [Test]
     [Order(1)]
+    [Category("Smoke")]
+    [Category("Regression")]
     public void AddProjectTest()
     {
         _project = Project.Generate();
@@ -23,6 +25,8 @@ public class ProjectFakerApiTest : BaseApiTest
 
     [Test]
     [Order(2)]
+    [Category("Smoke")]
+    [Category("Regression")]
     public void GetProjectTest()
     {
         _logger.Info(ProjectService?.GetProject(_project.Id.ToString()).Result.ToString());
@@ -30,6 +34,7 @@ public class ProjectFakerApiTest : BaseApiTest
     
     [Test]
     [Order(3)]
+    [Category("Smoke")]
     public void DeleteProjectTest()
     {
         Debug.Assert(ProjectService != null, nameof(ProjectService) + " != null");

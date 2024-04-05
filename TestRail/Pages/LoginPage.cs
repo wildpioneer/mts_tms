@@ -30,5 +30,8 @@ namespace TestRail.Pages
         public IWebElement PswInput => WaitsHelper.WaitForExists(PswInputBy);
         public IWebElement RememberMeCheckbox => WaitsHelper.WaitForExists(RememberMeCheckboxBy);
         public IWebElement LoginInButton => WaitsHelper.WaitForExists(LoginInButtonBy);
+        
+        // Методы получения свойств
+        public string GetErrorLabelText() => ErrorLabel.Text.Trim();
     }
 }

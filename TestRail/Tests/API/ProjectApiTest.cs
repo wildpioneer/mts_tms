@@ -14,6 +14,8 @@ public class ProjectApiTest : BaseApiTest
     
     [Test]
     [Order(1)]
+    [Category("Smoke")]
+    [Category("Regression")]
     public void AddProjectTest()
     {
         _project = new Project
@@ -31,6 +33,7 @@ public class ProjectApiTest : BaseApiTest
 
     [Test]
     [Order(2)]
+    [Category("Regression")]
     public void GetProjectTest()
     {
         _logger.Info(ProjectService?.GetProject(_project.Id.ToString()).Result.ToString());
@@ -48,6 +51,7 @@ public class ProjectApiTest : BaseApiTest
 
     [Test]
     [Order(4)]
+    [Category("Regression")]
     public void UpdateAddProjectTest()
     {
         var project = new Project
@@ -66,6 +70,7 @@ public class ProjectApiTest : BaseApiTest
     
     [Test]
     [Order(5)]
+    [Category("Regression")]
     public void DeleteProjectTest()
     {
         Debug.Assert(ProjectService != null, nameof(ProjectService) + " != null");

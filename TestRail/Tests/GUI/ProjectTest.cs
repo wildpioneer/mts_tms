@@ -5,6 +5,7 @@ namespace TestRail.Tests.GUI;
 public class ProjectTest : BaseTest
 {
     [Test]
+    [Category("Regression")]
     public void SuccessfulAddProjectTest()
     {
         _navigationSteps.SuccessfulLogin(Admin);

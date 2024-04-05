@@ -12,7 +12,7 @@ jobs:
       matrix:
         configuration: [ Release ]
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
@@ -35,6 +35,10 @@ jobs:
       # Execute all unit tests in the solution
       - name: Execute tests
         run: dotnet test
+
+      # Folder 1
+      - name: Get files
+        run: ls TestRail/bin/Debug/net8.0
         
       - name: Load test report history
         uses: actions/checkout@v3
@@ -50,7 +54,7 @@ jobs:
         with:
           gh_pages: gh-pages
           allure_history: allure-history
-          allure_results: build/allure-results
+          allure_results: TestRail/bin/Debug/net8.0/allure-results
 
       - name: Publish test report
         uses: peaceiris/actions-gh-pages@v3
