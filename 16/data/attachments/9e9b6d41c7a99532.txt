@@ -1,0 +1,4 @@
+2024/04/05 21:43:20.832|DEBUG|Get request to : index.php?/api/v2/get_project/{project_id} 
+2024/04/05 21:43:21.037|DEBUG|Request finished with status code : OK 
+2024/04/05 21:43:21.037|DEBUG|{"id":177,"name":"WP Test 1","announcement":"Some description!!!","show_announcement":true,"is_completed":false,"completed_on":null,"suite_mode":1,"default_role_id":null,"case_statuses_enabled":false,"url":"https:\/\/aqa2505.testrail.io\/index.php?\/projects\/overview\/177","users":[],"groups":[]} 
+2024/04/05 21:43:21.037|INFO|Project { Id = 177, Name = WP Test 1, Announcement = Some description!!!, ShowAnnouncement = True, IsCompleted = False, CompletedOn = , SuiteMode = 1, DefaultRoleId = , Url = https://aqa2505.testrail.io/index.php?/projects/overview/177, Users = System.Collections.Generic.List`1[TestRail.Models.User], Groups = System.Collections.Generic.List`1[TestRail.Models.Group] } 
