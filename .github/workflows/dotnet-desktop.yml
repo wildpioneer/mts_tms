@@ -6,7 +6,8 @@ on:
       deployment_target:
         description: Choose target
         required: true
-        default: choice
+        default: 
+        type: choice
         options:
           - smoke_test
           - regression_test
