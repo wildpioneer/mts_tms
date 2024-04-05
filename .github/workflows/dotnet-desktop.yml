@@ -18,7 +18,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
-      # Install the .NET Core workload 
+      # Install the .NET Core workload
       - name: Install .NET Core
         uses: actions/setup-dotnet@v4
         with:
@@ -50,7 +50,8 @@ jobs:
         with:
           gh_pages: gh-pages
           allure_history: allure-history
-          allure_results: build/allure-results
+          allure_results: TestRail/bin/Release/net8.0/allure-results
+          #allure_results: build/allure-results
 
       - name: Publish test report
         uses: peaceiris/actions-gh-pages@v3
