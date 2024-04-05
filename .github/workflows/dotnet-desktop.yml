@@ -38,13 +38,13 @@ jobs:
 
       # Folder 1
       - name: Get files
-        run: ls -l
+        run: ls TestRail
 
       - name: Into Folder
-        run: cd TestRail/
+        run: ls TestRail/bin
 
       - name: Get files 1
-        run: ls -l
+        run: ls TestRail/bin/Debug
         
       - name: Load test report history
         uses: actions/checkout@v3
