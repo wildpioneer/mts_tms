@@ -35,6 +35,16 @@ jobs:
       # Execute all unit tests in the solution
       - name: Execute tests
         run: dotnet test
+
+      # Folder 1
+      - name: Get files
+        run: ls -l
+
+      - name: Into Folder
+        run: cd TestRail/
+
+      - name: Get files 1
+        run: ls -l
         
       - name: Load test report history
         uses: actions/checkout@v3
