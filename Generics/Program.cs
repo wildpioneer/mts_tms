@@ -12,9 +12,9 @@ Console.WriteLine($"Tom ID: {tomId}");
 Console.WriteLine($"Bob ID: {bobId}");
 
 
-ObjectPerson objectPerson1 = new ObjectPerson(123, "Bob"); // упаковка в значения int в тип Object
-int intBobId = (int)objectPerson1.Id; // Распаковка в тип int
-// string strBobId = (string)objectPerson1.Id;                  // Ошибка при выполнении
+ObjectPerson objectPerson1 = new ObjectPerson(123, "Bob");  // упаковка в значения int в тип Object
+int intBobId = (int)objectPerson1.Id;                       // Распаковка в тип int
+// string strBobId = (string)objectPerson1.Id;              // Ошибка при выполнении
 
 // -=================== Generics ===================- 
 GenericPerson<int> intPerson = new GenericPerson<int>(123, "Alex");
@@ -27,7 +27,7 @@ uniquePerson.Print();
 
 int intAlexId = intPerson.Id;
 string strAlexId = strPerson.Id;
-// В обоих случаях не нужна раскаковка и упаковка
+// В обоих случаях не нужна распаковка и упаковка
 
 Company<GenericPerson<Guid>> mtCompany = new Company<GenericPerson<Guid>>(uniquePerson);
 
@@ -52,6 +52,9 @@ string x1 = "10";
 string y1 = "15";
 Helper.Swap<string>(ref x1, ref y1);
 
+Helper.Swap(ref x, ref y);
+Helper.Swap(ref x1, ref y1);
+
 // -=================== Ограничения Generics ===================-
 // -=================== Ограничения методов
 Helper.SendMessage(new EmailMessage("Bye World"));
@@ -65,22 +68,23 @@ Messenger<EmailMessage> outlook = new Messenger<EmailMessage>();
 outlook.SendMessage(new EmailMessage("Bye World"));
 
 MessengerStruct<MessageStruct> messengerStruct = new MessengerStruct<MessageStruct>();
-// MessengerStruct<int> // Ошибка - int не struct
-// MessengerStruct<Message> // Ошибка - class не struct
+MessengerStruct<int> intStruct = new MessengerStruct<int>() ; // int == struct
+//MessengerStruct<Message> objectStruct; // Ошибка - class не struct
 messengerStruct.SendMessage(new MessageStruct("Struct is cool for small objects..."));
 
 MessengerClass<SmsMessage> smsMessengerClass = new MessengerClass<SmsMessage>();
-// MessengerClass<int> // Ошибка
-// MessengerClass<string> // string = class  
+//MessengerClass<int> intMessengerClass // Ошибка int != class
+//MessengerClass<string> stringMessengerClass; // string == class  
 smsMessengerClass.SendMessage(new SmsMessage("SMS is not actual anymore..."));
 
-// MessengerNew<SmsMessage> nMessengerNew = new MessengerNew<SmsMessage>(); // Ошибка потому что у SmsMessage нет конструктора без параметров 
-MessengerNew<EmailMessage> nMessengerNew = new MessengerNew<EmailMessage>(); // Все ок
+// MessengerNew<SmsMessage> nMessengerNew = new MessengerNew<SmsMessage>();     // Ошибка потому что у SmsMessage нет конструктора без параметров 
+MessengerNew<EmailMessage> nMessengerNew = new MessengerNew<EmailMessage>();    // Все ок
 
 // -=================== Ограничения нескольких универсальных параметров
 SimplePerson sender = new SimplePerson(1, "Ted");
 SimplePerson receiver = new SimplePerson(3, "Fred");
-MessengerService<EmailMessage, SimplePerson> messengerService = new MessengerService<EmailMessage, SimplePerson>();
+MessengerService<SimplePerson, SimplePerson, EmailMessage> messengerService 
+    = new MessengerService<SimplePerson, SimplePerson, EmailMessage>();
 messengerService.SendMessage(sender, receiver, new EmailMessage("Email..."));
 
 // -=================== Наследование обобщенных типов

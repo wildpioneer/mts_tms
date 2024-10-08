@@ -1,11 +1,12 @@
 namespace Generics;
 
-public class MessengerService<T, P> 
+public class MessengerService<S, R, M> 
     
-    where T : Message
-    where P: SimplePerson
+    where M : Message
+    where S : SimplePerson
+    where R : SimplePerson
 {
-    public void SendMessage(P sender, P receiver, T message)
+    public void SendMessage(S sender, R receiver, M message)
     {
         Console.WriteLine($"Отправитель: {sender.Name}");
         Console.WriteLine($"Получатель: {receiver.Name}");

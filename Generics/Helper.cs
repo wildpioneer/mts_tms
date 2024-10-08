@@ -7,6 +7,8 @@ public static class Helper
         T temp = x;
         x = y;
         y = temp;
+        
+        // Тоже самое, только Swap via deconstruction
         // (x, y) = (y, x);
     }
     
