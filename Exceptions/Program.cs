@@ -62,3 +62,5 @@ CustomExceptionUsage customExceptionUsage = new CustomExceptionUsage();
 // customExceptionUsage.Run();
 // customExceptionUsage.ProcessInput(" ");
 customExceptionUsage.UseCustomArgumentException();
+
+// ExceptionStack - Поиск блока catch при обработке исключений
