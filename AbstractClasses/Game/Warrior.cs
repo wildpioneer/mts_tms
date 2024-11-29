@@ -4,6 +4,7 @@ public class Warrior : Character
 {
     public Warrior(int level) : base(level)
     {
+        
     }
 
     public override void Move()

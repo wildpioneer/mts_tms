@@ -5,6 +5,10 @@ using Interfaces.BaseImpl;
 using Interfaces.ExplicitImpl;
 using Interfaces.FinalExample;
 
+// 1. Начинаем с IExample
+// 2. IModificators - модификаторы доступа
+
+
 // IDisplayable displayable = new IDisplayable(); - Ошибка 
 
 Smartphone smartphone = new Smartphone();

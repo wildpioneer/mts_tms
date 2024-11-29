@@ -2,8 +2,8 @@ namespace AbstractClasses.Game;
 
 public abstract class Character
 {
-    public int level;
-    public string name;
+    private int level;
+    public string Name { get; private set; }
 
     public Character(int level)
     {
