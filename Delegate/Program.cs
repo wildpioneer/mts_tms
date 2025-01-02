@@ -1,61 +1,70 @@
 ﻿using Delegate;
 using Delegate.HomeWork;
 
-// -================= Single Cast Delegate
-// new Example1().Run();
-// new Example2().Run();
+class Program
+{
+    static void Main()
+    {
+        // -================= Single Cast Delegate
+        // new Example1().Run();
+        // new Example2().Run();
 
-// -================= Multi Cast Delegate
-// new Example3().Run();
+        // -================= Multi Cast Delegate
+        // new Example3().Run();
 
-// -================= Анонимные методы
-// new Example4().Run();
+        // -================= Анонимные методы
+        // new Example4().Run();
 
-// -================= Delegate как параметр
-//new Example5().Run();
+        // -================= Delegate как параметр
+        //new Example5().Run();
 
-// -================= Живой пример
-// new Example6().Run();
+        // -================= Живой пример
+        // new Example6().Run();
 
-// -================= Invoke
-// new Example7().Run();
+        // -================= Invoke
+        // new Example7().Run();
 
-// -================= Generic Delegates
-// new Example8().Run();
+        // Анонимные методы
+        new AnonymousMethods().Run();
 
-// -================= Лямбда выражения
-Lambda lambda = new Lambda();
-lambda.Example0();
-lambda.Example1();
-lambda.Example2();
-lambda.Example3();
-lambda.Example4();
-lambda.Example5();
-lambda.Example6();
+        // -================= Generic Delegates
+        // new Example8().Run();
 
-// -================= Action Delegates
-ActionExamples actionExamples = new ActionExamples();
-actionExamples.SimpleAction();
+        // -================= Лямбда выражения
+        Lambda lambda = new Lambda();
+        lambda.Example0();
+        lambda.Example1();
+        lambda.Example2();
+        lambda.Example3();
+        lambda.Example4();
+        lambda.Example5();
+        lambda.Example6();
 
-actionExamples.PerformOperation(5, 3, (a, b) => Console.WriteLine($"Sum: {a + b}"));
-actionExamples.PerformOperation(8, 4, (a, b) => Console.WriteLine($"Product: {a * b}"));
+        // -================= Action Delegates
+        ActionExamples actionExamples = new ActionExamples();
+        actionExamples.SimpleAction();
 
-actionExamples.Run();
+        actionExamples.PerformOperation(5, 3, (a, b) => Console.WriteLine($"Sum: {a + b}"));
+        actionExamples.PerformOperation(8, 4, (a, b) => Console.WriteLine($"Product: {a * b}"));
 
-// -================= Predicate Delegates
-/*
-PredicateExample predicateExample = new PredicateExample();
-predicateExample.Run();
-*/
+        actionExamples.Run();
 
-// -================= Func Delegates
-/*
-FuncExample funcExample = new FuncExample();
-funcExample.Run();
-*/
+        // -================= Predicate Delegates
+        /*
+        PredicateExample predicateExample = new PredicateExample();
+        predicateExample.Run();
+        */
 
-// HomeWork
-/*
-Task4 task4 = new Task4();
-task4.Run();
-*/
+        // -================= Func Delegates
+        /*
+        FuncExample funcExample = new FuncExample();
+        funcExample.Run();
+        */
+
+        // HomeWork
+        /*
+        Task4 task4 = new Task4();
+        task4.Run();
+        */
+    }
+}
