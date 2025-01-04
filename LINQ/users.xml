@@ -1,0 +1,17 @@
+<Users>
+    <User>
+        <Id>1</Id>
+        <Name>Anna</Name>
+        <Age>25</Age>
+    </User>
+    <User>
+        <Id>2</Id>
+        <Name>Mark</Name>
+        <Age>17</Age>
+    </User>
+    <User>
+        <Id>3</Id>
+        <Name>John</Name>
+        <Age>30</Age>
+    </User>
+</Users>
