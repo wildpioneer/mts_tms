@@ -24,5 +24,14 @@
 
 
 
+    <ItemGroup>
+      <None Remove="users.xml" />
+      <Content Include="users.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
+
+
 
 </Project>

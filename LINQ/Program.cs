@@ -4,7 +4,7 @@ public class Program
 {
     static void Main()
     {
-        /*// Testing Task
+        // Testing Task
         TestTask testTask = new TestTask();
         testTask.Solve();
         
@@ -79,9 +79,8 @@ public class Program
         
         // Методы Join
         new Join().RunQuerySyntax();
-        new Join().RunMethodSyntax();*/
+        new Join().RunMethodSyntax();
 
         new IQueryableExample().RunTest();
-        
     }
 }

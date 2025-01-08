@@ -1,3 +1,5 @@
+using System.Xml.Linq;
+
 namespace LINQ;
 
 public class Select
@@ -15,7 +17,7 @@ public class Select
         IEnumerable<int> queryResult =
             from number in _testIntSet
             select number;
-
+        
         // Получение трансформированного типа данных
         IEnumerable<string> queryResult11 =
             from number in _testIntSet
@@ -85,6 +87,5 @@ public class Select
         {
             Console.WriteLine($"Person's: Name - {i.Name}, Year of birth: {i.YearOfBirth}");
         }
-
     }
 }
