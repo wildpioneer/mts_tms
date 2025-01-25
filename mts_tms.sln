@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageObjectSimple", "PageObj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageObjectSteps", "PageObjectSteps\PageObjectSteps.csproj", "{79B64443-60D7-4CE4-836D-411FB9284612}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageObjectDI", "PageObjectDI\PageObjectDI.csproj", "{1D5FA477-B0E5-4BF4-9D67-D45BC5617043}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{79B64443-60D7-4CE4-836D-411FB9284612}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79B64443-60D7-4CE4-836D-411FB9284612}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79B64443-60D7-4CE4-836D-411FB9284612}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D5FA477-B0E5-4BF4-9D67-D45BC5617043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D5FA477-B0E5-4BF4-9D67-D45BC5617043}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D5FA477-B0E5-4BF4-9D67-D45BC5617043}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D5FA477-B0E5-4BF4-9D67-D45BC5617043}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
